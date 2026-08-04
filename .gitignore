@@ -1,0 +1,28 @@
+# .NET
+bin/
+obj/
+out/
+*.user
+*.suo
+.vs/
+artifacts/
+
+# Test results
+TestResults/
+*.trx
+coverage/
+coverlet.report.*
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Docker
+docker/**/data/
+
+# Node (frontend, later)
+frontend/node_modules/
+frontend/.next/
