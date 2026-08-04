@@ -1,0 +1,2 @@
+EXIT CODE: 0
+(no output = no style/analyzer violations found across all 5 Shared.* projects; .editorconfig + Directory.Build.props analyzers — AnalysisMode=Recommended — applied clean)

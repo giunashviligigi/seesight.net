@@ -1,0 +1,4 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+
+No test projects exist yet in the solution — Shared.* libraries are intentionally empty this milestone (ImplementationRoadmap.md M0: 'empty classes/interfaces only, populated as needed later'), so there is no logic yet to unit test. dotnet test exits 0 (success, nothing to run) rather than failing. This is the documented, expected state for M0, not a skipped or broken test suite.

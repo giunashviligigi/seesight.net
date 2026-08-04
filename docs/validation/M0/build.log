@@ -1,0 +1,14 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SeeSight.Shared.Common -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Common/bin/Release/net9.0/SeeSight.Shared.Common.dll
+  SeeSight.SharedKernel -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+  SeeSight.Shared.Observability -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+  SeeSight.Shared.Contracts -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Contracts/bin/Release/net9.0/SeeSight.Shared.Contracts.dll
+  SeeSight.Shared.Messaging -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Messaging/bin/Release/net9.0/SeeSight.Shared.Messaging.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.30
+EXIT CODE: 0

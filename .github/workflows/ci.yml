@@ -1,0 +1,74 @@
+# CI for the SeeSight.net solution. Path-filtered per Deployment.md §5 so a
+# change to one service doesn't rebuild/retest the whole solution — as of M0
+# there is only one path group (Shared), populated with one entry per service
+# as each is created in later milestones.
+#
+# M0 scope: build the solution (Shared.* projects only, no tests exist yet
+# since they're empty class libraries with no logic to test — see
+# docs/validation/M0/README.md for why "dotnet test" is a documented no-op
+# this milestone, not a skipped step).
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main, development]
+  push:
+    branches: [main, development]
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  CI: true
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      shared: ${{ steps.filter.outputs.shared }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            shared:
+              - 'src/Shared/**'
+              - 'Directory.Build.props'
+              - 'Directory.Packages.props'
+              - 'global.json'
+              - 'SeeSight.sln'
+
+  build-and-test:
+    needs: changes
+    if: needs.changes.outputs.shared == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            9.0.x
+
+      - name: Restore
+        run: dotnet restore SeeSight.sln
+
+      - name: Build
+        run: dotnet build SeeSight.sln --no-restore --configuration Release
+
+      - name: Test
+        run: dotnet test SeeSight.sln --no-build --configuration Release --logger "trx;LogFileName=test-results.trx" --results-directory ./TestResults
+        continue-on-error: false
+
+      - name: Publish test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ./TestResults
+          if-no-files-found: warn
+
+      - name: Format check
+        run: dotnet format SeeSight.sln --verify-no-changes --verbosity minimal

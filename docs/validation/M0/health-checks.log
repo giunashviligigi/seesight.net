@@ -1,0 +1,44 @@
+=== Health check verification (docs/validation/M0) ===
+
+--- Docker-level HEALTHCHECK status ---
+/seesight-infra-postgres-1: healthy
+/seesight-infra-rabbitmq-1: healthy
+/seesight-infra-redis-1: healthy
+/seesight-infra-jaeger-1: healthy
+/seesight-infra-prometheus-1: healthy
+/seesight-infra-grafana-1: healthy
+
+--- otel-collector: no in-container shell/wget (distroless image), verified externally instead ---
+$ curl -sS http://localhost:13133/
+{"status":"Server available","upSince":"2026-08-04T23:44:15.160734297Z","uptime":"6m14.084280837s"}
+
+--- Postgres: all 6 per-service databases created ---
+$ psql -U seesight -d postgres -c "SELECT datname FROM pg_database WHERE datname IN ('identity','tenant','trip','ai','notification','reporting') ORDER BY datname;"
+   datname    
+--------------
+ ai
+ identity
+ notification
+ reporting
+ tenant
+ trip
+(6 rows)
+
+
+--- RabbitMQ management UI ---
+http://localhost:15672/  -> HTTP 200
+
+--- Grafana ---
+http://localhost:3001/login  -> HTTP 200
+http://localhost:3001/api/health -> {
+  "database": "ok",
+  "version": "11.3.0",
+  "commit": "d9455ff7db73b694db7d412e49a68bec767f2b5a"
+}
+
+--- Jaeger UI ---
+http://localhost:16686/  -> HTTP 200
+
+--- Prometheus: otel-collector scrape target health ---
+otel-collector -> up
+prometheus -> up

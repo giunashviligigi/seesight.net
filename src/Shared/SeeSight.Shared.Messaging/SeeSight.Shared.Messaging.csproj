@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\SeeSight.SharedKernel\SeeSight.SharedKernel.csproj" />
+    <ProjectReference Include="..\SeeSight.Shared.Contracts\SeeSight.Shared.Contracts.csproj" />
+  </ItemGroup>
+</Project>

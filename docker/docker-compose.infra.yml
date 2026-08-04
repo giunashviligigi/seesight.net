@@ -1,0 +1,139 @@
+# Infra-only stack for local development: Postgres, RabbitMQ, Redis, and the
+# observability stack (OTel Collector, Jaeger, Prometheus, Grafana). No
+# SeeSight services run here yet — those are added to docker-compose.yml
+# starting with M1 (Identity Service + Gateway). Per SolutionStructure.md §1
+# and Deployment.md §1.
+#
+# Usage: docker compose -f docker/docker-compose.infra.yml up -d
+
+name: seesight-infra
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: seesight
+      POSTGRES_PASSWORD: seesight
+    ports:
+      - "5432:5432"
+    volumes:
+      - seesight_pg_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U seesight"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - seesight-network
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: seesight
+      RABBITMQ_DEFAULT_PASS: seesight
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - seesight-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - seesight-network
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.62.0
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports:
+      - "16686:16686" # Jaeger UI
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:14269/"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - seesight-network
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.112.0
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro
+    # This image has no shell/wget (distroless), so it can't run a Docker-level
+    # HEALTHCHECK. Verified externally instead: `curl http://localhost:13133/`
+    # against the health_check extension port below (see docs/validation/M0).
+    ports:
+      - "4317:4317" # OTLP gRPC
+      - "4318:4318" # OTLP HTTP
+      - "13133:13133" # health_check extension
+    depends_on:
+      jaeger:
+        condition: service_healthy
+    networks:
+      - seesight-network
+
+  prometheus:
+    image: prom/prometheus:v2.55.1
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - seesight_prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    depends_on:
+      - otel-collector
+    networks:
+      - seesight-network
+
+  grafana:
+    image: grafana/grafana:11.3.0
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - seesight_grafana_data:/var/lib/grafana
+    ports:
+      - "3001:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    depends_on:
+      prometheus:
+        condition: service_healthy
+      jaeger:
+        condition: service_healthy
+    networks:
+      - seesight-network
+
+networks:
+  seesight-network:
+    name: seesight-network
+
+volumes:
+  seesight_pg_data:
+  seesight_prometheus_data:
+  seesight_grafana_data:

@@ -1,0 +1,9 @@
+$ dotnet --version
+10.0.302
+
+$ dotnet --list-sdks
+10.0.302 [/usr/local/share/dotnet/sdk]
+
+$ dotnet --list-runtimes
+Microsoft.AspNetCore.App 10.0.10 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.NETCore.App 10.0.10 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]

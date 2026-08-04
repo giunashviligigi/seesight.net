@@ -1,0 +1,18 @@
+# Minimal datasource provisioning so Grafana is immediately useful once M0's
+# infra is up. Actual dashboards are built in M13 (Observability Hardening
+# Pass) per ImplementationRoadmap.md — this file only wires up the two
+# datasources they'll be built against.
+
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+
+  - name: Jaeger
+    type: jaeger
+    access: proxy
+    url: http://jaeger:16686

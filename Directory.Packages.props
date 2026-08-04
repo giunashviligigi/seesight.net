@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <!--
+    No package versions are pinned yet — M0's five Shared.* projects are empty class
+    libraries with no NuGet dependencies (per ImplementationRoadmap.md M0: "populated
+    as needed later"). Entries are added here, one per package, as each milestone
+    introduces its first real dependency (EF Core/Npgsql in M1, MassTransit in M6,
+    OpenTelemetry/Serilog when Observability is wired in, xunit/FluentAssertions
+    alongside each service's first test project, etc.) — never a version range,
+    always an exact version, per central package management convention.
+  -->
+</Project>
