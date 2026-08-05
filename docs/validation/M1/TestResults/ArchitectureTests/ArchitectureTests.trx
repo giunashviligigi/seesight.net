@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="dda0e851-99b7-4bf7-ae63-20e11c775f43" name="@Gigis-MacBook-Air 2026-08-05 05:45:28" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-08-05T05:45:28.1377230+04:00" queuing="2026-08-05T05:45:28.1377230+04:00" start="2026-08-05T05:45:27.4875960+04:00" finish="2026-08-05T05:45:28.2571440+04:00" />
+  <TestSettings name="default" id="9f21de86-a24d-4665-baed-4af90036f347">
+    <Deployment runDeploymentRoot="_Gigis-MacBook-Air_2026-08-05_05_45_28" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="903fe641-b002-4de9-a438-2053edc71c60" testId="49942088-d593-b144-7590-87769864c1bf" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;FluentValidation&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0007348" startTime="2026-08-05T05:45:28.0987700+04:00" endTime="2026-08-05T05:45:28.0987700+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="903fe641-b002-4de9-a438-2053edc71c60" />
+    <UnitTestResult executionId="f936a20b-06bf-4765-98b6-815d4739f2b5" testId="c5531dec-0eb4-cda6-d611-ecd75dd5dd94" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;Microsoft.IdentityModel&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0021104" startTime="2026-08-05T05:45:28.1077420+04:00" endTime="2026-08-05T05:45:28.1077420+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f936a20b-06bf-4765-98b6-815d4739f2b5" />
+    <UnitTestResult executionId="f8b7a302-5a5d-489a-8922-44d8b5721f15" testId="a34074e8-d514-6f9b-1dc7-aea8c5ad5b78" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_does_not_depend_on_application" computerName="Gigis-MacBook-Air" duration="00:00:00.0004234" startTime="2026-08-05T05:45:28.1233060+04:00" endTime="2026-08-05T05:45:28.1233060+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8b7a302-5a5d-489a-8922-44d8b5721f15" />
+    <UnitTestResult executionId="363b1cd1-1ded-4ec2-ae15-8b727e520e5e" testId="6a3f192a-a3c9-6275-ef58-93d2f2d56ea0" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_does_not_depend_on_infrastructure" computerName="Gigis-MacBook-Air" duration="00:00:00.0004463" startTime="2026-08-05T05:45:28.1205710+04:00" endTime="2026-08-05T05:45:28.1205710+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="363b1cd1-1ded-4ec2-ae15-8b727e520e5e" />
+    <UnitTestResult executionId="cd3c4cf1-89ed-498b-a68d-570b5254c172" testId="c50c17af-538e-1811-0d18-23261d50926d" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_does_not_depend_on_api" computerName="Gigis-MacBook-Air" duration="00:00:00.0004300" startTime="2026-08-05T05:45:28.1228730+04:00" endTime="2026-08-05T05:45:28.1228730+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd3c4cf1-89ed-498b-a68d-570b5254c172" />
+    <UnitTestResult executionId="4d276ffc-6c99-45e1-9f20-03a376a8a7bf" testId="5ee8caf0-8b9f-676a-c11a-d0f217a4d31e" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Infrastructure_does_not_depend_on_api" computerName="Gigis-MacBook-Air" duration="00:00:00.0017239" startTime="2026-08-05T05:45:28.1204290+04:00" endTime="2026-08-05T05:45:28.1204290+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d276ffc-6c99-45e1-9f20-03a376a8a7bf" />
+    <UnitTestResult executionId="eaba8ef1-eb7c-4fcd-a6b4-00b1e28f489f" testId="94c169d5-d375-a577-aac9-e91fe1c96143" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;Microsoft.EntityFrameworkCore.Design&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0024558" startTime="2026-08-05T05:45:28.1056150+04:00" endTime="2026-08-05T05:45:28.1056150+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eaba8ef1-eb7c-4fcd-a6b4-00b1e28f489f" />
+    <UnitTestResult executionId="90011e77-d9b2-44c1-be9b-f29f5a9c979d" testId="fe57213a-e930-3b89-d84e-e892cb56e313" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_does_not_depend_on_api" computerName="Gigis-MacBook-Air" duration="00:00:00.0019368" startTime="2026-08-05T05:45:28.1203040+04:00" endTime="2026-08-05T05:45:28.1203040+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90011e77-d9b2-44c1-be9b-f29f5a9c979d" />
+    <UnitTestResult executionId="067c985e-588f-453d-ae2e-04dc5f505abc" testId="9d9e58e3-ae3c-6e2a-d0bb-c1e17af66bad" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_does_not_depend_on_infrastructure" computerName="Gigis-MacBook-Air" duration="00:00:00.0018516" startTime="2026-08-05T05:45:28.1224350+04:00" endTime="2026-08-05T05:45:28.1224350+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="067c985e-588f-453d-ae2e-04dc5f505abc" />
+    <UnitTestResult executionId="ba7d161e-8a91-4ab6-ab0e-5b76117f2862" testId="56aed4cd-fabc-2086-10de-0f7053705bb9" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;Microsoft.EntityFrameworkCore&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0374052" startTime="2026-08-05T05:45:28.0942230+04:00" endTime="2026-08-05T05:45:28.0942310+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba7d161e-8a91-4ab6-ab0e-5b76117f2862" />
+    <UnitTestResult executionId="e8d9a32a-2b24-4572-9ff5-a6fad2e5763f" testId="26134b1e-5da5-1274-779c-5bbd9d276d5f" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;MediatR&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0003988" startTime="2026-08-05T05:45:28.0991710+04:00" endTime="2026-08-05T05:45:28.0991710+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8d9a32a-2b24-4572-9ff5-a6fad2e5763f" />
+    <UnitTestResult executionId="034590d6-315f-4514-85f0-41f9fd9de625" testId="6d1361c2-c74e-32f2-2971-3824cebf891d" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;Microsoft.AspNetCore&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0004107" startTime="2026-08-05T05:45:28.0990560+04:00" endTime="2026-08-05T05:45:28.0990560+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="034590d6-315f-4514-85f0-41f9fd9de625" />
+    <UnitTestResult executionId="20562d7b-cde9-459b-87cf-e057ae4e4e02" testId="8176d54c-e2e4-6ea3-62b7-ef55695b452a" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;Npgsql&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0054929" startTime="2026-08-05T05:45:28.1011230+04:00" endTime="2026-08-05T05:45:28.1011230+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="20562d7b-cde9-459b-87cf-e057ae4e4e02" />
+    <UnitTestResult executionId="f6ecf336-846f-412e-901f-d08f8d9fa95a" testId="d0cdb916-815a-9657-d132-12425d42b4e8" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;BCrypt&quot;)" computerName="Gigis-MacBook-Air" duration="00:00:00.0019627" startTime="2026-08-05T05:45:28.1031200+04:00" endTime="2026-08-05T05:45:28.1031200+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f6ecf336-846f-412e-901f-d08f8d9fa95a" />
+    <UnitTestResult executionId="9efb123d-f794-4970-ad7f-1f0c8660840d" testId="0da990c6-3992-2090-ee30-401909c1207e" testName="SeeSight.Identity.ArchitectureTests.LayeringTests.No_layer_depends_on_the_gateway" computerName="Gigis-MacBook-Air" duration="00:00:00.0086241" startTime="2026-08-05T05:45:28.1164290+04:00" endTime="2026-08-05T05:45:28.1164290+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9efb123d-f794-4970-ad7f-1f0c8660840d" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_does_not_depend_on_application" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="a34074e8-d514-6f9b-1dc7-aea8c5ad5b78">
+      <Execution id="f8b7a302-5a5d-489a-8922-44d8b5721f15" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Domain_does_not_depend_on_application" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_does_not_depend_on_api" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="fe57213a-e930-3b89-d84e-e892cb56e313">
+      <Execution id="90011e77-d9b2-44c1-be9b-f29f5a9c979d" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Application_does_not_depend_on_api" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;MediatR&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="26134b1e-5da5-1274-779c-5bbd9d276d5f">
+      <Execution id="e8d9a32a-2b24-4572-9ff5-a6fad2e5763f" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Domain_has_no_framework_or_infrastructure_package_dependency" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_does_not_depend_on_infrastructure" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="6a3f192a-a3c9-6275-ef58-93d2f2d56ea0">
+      <Execution id="363b1cd1-1ded-4ec2-ae15-8b727e520e5e" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Domain_does_not_depend_on_infrastructure" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;BCrypt&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="d0cdb916-815a-9657-d132-12425d42b4e8">
+      <Execution id="f6ecf336-846f-412e-901f-d08f8d9fa95a" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Application_has_no_provider_specific_infrastructure_dependency" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.No_layer_depends_on_the_gateway" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="0da990c6-3992-2090-ee30-401909c1207e">
+      <Execution id="9efb123d-f794-4970-ad7f-1f0c8660840d" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="No_layer_depends_on_the_gateway" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Infrastructure_does_not_depend_on_api" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="5ee8caf0-8b9f-676a-c11a-d0f217a4d31e">
+      <Execution id="4d276ffc-6c99-45e1-9f20-03a376a8a7bf" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Infrastructure_does_not_depend_on_api" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_does_not_depend_on_infrastructure" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="9d9e58e3-ae3c-6e2a-d0bb-c1e17af66bad">
+      <Execution id="067c985e-588f-453d-ae2e-04dc5f505abc" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Application_does_not_depend_on_infrastructure" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;Microsoft.IdentityModel&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="c5531dec-0eb4-cda6-d611-ecd75dd5dd94">
+      <Execution id="f936a20b-06bf-4765-98b6-815d4739f2b5" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Application_has_no_provider_specific_infrastructure_dependency" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_does_not_depend_on_api" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="c50c17af-538e-1811-0d18-23261d50926d">
+      <Execution id="cd3c4cf1-89ed-498b-a68d-570b5254c172" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Domain_does_not_depend_on_api" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;Microsoft.AspNetCore&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="6d1361c2-c74e-32f2-2971-3824cebf891d">
+      <Execution id="034590d6-315f-4514-85f0-41f9fd9de625" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Domain_has_no_framework_or_infrastructure_package_dependency" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;FluentValidation&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="49942088-d593-b144-7590-87769864c1bf">
+      <Execution id="903fe641-b002-4de9-a438-2053edc71c60" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Domain_has_no_framework_or_infrastructure_package_dependency" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;Microsoft.EntityFrameworkCore.Design&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="94c169d5-d375-a577-aac9-e91fe1c96143">
+      <Execution id="eaba8ef1-eb7c-4fcd-a6b4-00b1e28f489f" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Application_has_no_provider_specific_infrastructure_dependency" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Application_has_no_provider_specific_infrastructure_dependency(forbiddenNamespace: &quot;Npgsql&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="8176d54c-e2e4-6ea3-62b7-ef55695b452a">
+      <Execution id="20562d7b-cde9-459b-87cf-e057ae4e4e02" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Application_has_no_provider_specific_infrastructure_dependency" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.ArchitectureTests.LayeringTests.Domain_has_no_framework_or_infrastructure_package_dependency(forbiddenNamespace: &quot;Microsoft.EntityFrameworkCore&quot;)" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.architecturetests/bin/release/net9.0/seesight.identity.architecturetests.dll" id="56aed4cd-fabc-2086-10de-0f7053705bb9">
+      <Execution id="ba7d161e-8a91-4ab6-ab0e-5b76117f2862" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.ArchitectureTests.LayeringTests" name="Domain_has_no_framework_or_infrastructure_package_dependency" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="49942088-d593-b144-7590-87769864c1bf" executionId="903fe641-b002-4de9-a438-2053edc71c60" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5531dec-0eb4-cda6-d611-ecd75dd5dd94" executionId="f936a20b-06bf-4765-98b6-815d4739f2b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a34074e8-d514-6f9b-1dc7-aea8c5ad5b78" executionId="f8b7a302-5a5d-489a-8922-44d8b5721f15" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a3f192a-a3c9-6275-ef58-93d2f2d56ea0" executionId="363b1cd1-1ded-4ec2-ae15-8b727e520e5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c50c17af-538e-1811-0d18-23261d50926d" executionId="cd3c4cf1-89ed-498b-a68d-570b5254c172" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ee8caf0-8b9f-676a-c11a-d0f217a4d31e" executionId="4d276ffc-6c99-45e1-9f20-03a376a8a7bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="94c169d5-d375-a577-aac9-e91fe1c96143" executionId="eaba8ef1-eb7c-4fcd-a6b4-00b1e28f489f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fe57213a-e930-3b89-d84e-e892cb56e313" executionId="90011e77-d9b2-44c1-be9b-f29f5a9c979d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9d9e58e3-ae3c-6e2a-d0bb-c1e17af66bad" executionId="067c985e-588f-453d-ae2e-04dc5f505abc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="56aed4cd-fabc-2086-10de-0f7053705bb9" executionId="ba7d161e-8a91-4ab6-ab0e-5b76117f2862" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26134b1e-5da5-1274-779c-5bbd9d276d5f" executionId="e8d9a32a-2b24-4572-9ff5-a6fad2e5763f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d1361c2-c74e-32f2-2971-3824cebf891d" executionId="034590d6-315f-4514-85f0-41f9fd9de625" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8176d54c-e2e4-6ea3-62b7-ef55695b452a" executionId="20562d7b-cde9-459b-87cf-e057ae4e4e02" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0cdb916-815a-9657-d132-12425d42b4e8" executionId="f6ecf336-846f-412e-901f-d08f8d9fa95a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0da990c6-3992-2090-ee30-401909c1207e" executionId="9efb123d-f794-4970-ad7f-1f0c8660840d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="15" executed="15" passed="15" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 9.0.18)
+[xUnit.net 00:00:00.03]   Discovering: SeeSight.Identity.ArchitectureTests
+[xUnit.net 00:00:00.05]   Discovered:  SeeSight.Identity.ArchitectureTests
+[xUnit.net 00:00:00.05]   Starting:    SeeSight.Identity.ArchitectureTests
+[xUnit.net 00:00:00.14]   Finished:    SeeSight.Identity.ArchitectureTests
+</StdOut>
+    </Output>
+    <CollectorDataEntries>
+      <Collector agentName="Gigis-MacBook-Air" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="Gigis-MacBook-Air/coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

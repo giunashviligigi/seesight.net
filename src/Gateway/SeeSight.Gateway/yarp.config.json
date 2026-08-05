@@ -1,0 +1,33 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "identity-register": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/register", "Methods": [ "POST" ] }
+      },
+      "identity-login": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/login", "Methods": [ "POST" ] }
+      },
+      "identity-me": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/me", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "identity-jwks": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/.well-known/jwks.json", "Methods": [ "GET" ] }
+      }
+    },
+    "Clusters": {
+      "identity": {
+        "Destinations": {
+          "destination1": {
+            "_comment": "Placeholder — Program.cs overrides this address from IdentityService:BaseUrl at startup, the one canonical 'where is Identity Service' setting shared with the JWKS/health HttpClient.",
+            "Address": "http://localhost:5075/"
+          }
+        }
+      }
+    }
+  }
+}

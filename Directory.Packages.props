@@ -4,13 +4,71 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
 
-  <!--
-    No package versions are pinned yet — M0's five Shared.* projects are empty class
-    libraries with no NuGet dependencies (per ImplementationRoadmap.md M0: "populated
-    as needed later"). Entries are added here, one per package, as each milestone
-    introduces its first real dependency (EF Core/Npgsql in M1, MassTransit in M6,
-    OpenTelemetry/Serilog when Observability is wired in, xunit/FluentAssertions
-    alongside each service's first test project, etc.) — never a version range,
-    always an exact version, per central package management convention.
-  -->
+  <!-- Introduced in M1 (Identity Service + Gateway). One entry per package, exact
+       version, per central package management convention — never a range. -->
+  <ItemGroup>
+    <!-- Data access -->
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.18" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.18" />
+    <!--
+      Pinned explicitly even though nothing references it directly — Npgsql.EntityFrameworkCore.PostgreSQL
+      9.0.4 has a transitive floor of 9.0.1, which otherwise wins an MSBuild assembly-unification
+      conflict (MSB3277) against the 9.0.18 that Microsoft.EntityFrameworkCore itself pulls.
+    -->
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.18" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+
+    <!-- Application layer: CQRS-lite + validation -->
+    <PackageVersion Include="MediatR" Version="12.5.0" />
+    <!--
+      Pinned to the 12.x line deliberately: MediatR 13+ moved to a commercial
+      license (LuckyPennySoftware) for most usage. 12.5.0 is the last MIT-licensed
+      release and is fully sufficient for the CQRS-lite pattern this project uses.
+    -->
+    <PackageVersion Include="FluentValidation" Version="12.1.1" />
+    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+
+    <!-- Identity Service: hashing, JWT -->
+    <PackageVersion Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageVersion Include="Microsoft.IdentityModel.Tokens" Version="8.22.0" />
+    <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.22.0" />
+
+    <!-- Gateway -->
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.18" />
+    <PackageVersion Include="Yarp.ReverseProxy" Version="2.3.0" />
+
+    <!-- OpenAPI (native .NET 9 support — Architecture.md's Swagger/OpenAPI aggregation) -->
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.18" />
+
+    <!-- Testing -->
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
+    <PackageVersion Include="FluentAssertions" Version="7.2.2" />
+    <!--
+      Pinned below 8.0 deliberately: FluentAssertions 8+ requires a paid commercial
+      license for most usage (Xceed license change, 2025). 7.2.2 is the last
+      Apache-2.0-licensed release.
+    -->
+    <PackageVersion Include="NSubstitute" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.18" />
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="4.13.0" />
+    <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
+    <PackageVersion Include="coverlet.collector" Version="10.0.1" />
+    <!--
+      Used only in *.UnitTests for Application-layer handler tests (IIdentityDbContext
+      backed by a real, fast, in-process provider — faking DbSet<T>'s async LINQ
+      surface by hand is impractical). Never used outside test projects.
+    -->
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.18" />
+
+    <!-- Observability -->
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.17.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.17.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.17.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.17.0" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <PackageVersion Include="Serilog.Enrichers.Span" Version="3.1.0" />
+  </ItemGroup>
 </Project>

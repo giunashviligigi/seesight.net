@@ -1,0 +1,5 @@
+Project                 Line Rate  Branch Rate    Lines Covered/Valid
+ArchitectureTests            0.0%         0.0%          0/564
+GatewayTests                 0.0%         0.0%          0/306
+IntegrationTests            75.9%        64.7%        428/564
+UnitTests                   71.7%        40.0%        114/159

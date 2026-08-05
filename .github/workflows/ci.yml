@@ -1,12 +1,16 @@
 # CI for the SeeSight.net solution. Path-filtered per Deployment.md §5 so a
-# change to one service doesn't rebuild/retest the whole solution — as of M0
-# there is only one path group (Shared), populated with one entry per service
-# as each is created in later milestones.
+# docs-only change doesn't trigger a full build/test cycle. As of M1 (Gateway +
+# Identity Service) everything still runs as one job — splitting into
+# per-service jobs is deferred until there are enough services for the
+# isolation to actually save CI time (Deployment.md §5's stated goal), not
+# introduced speculatively for two services.
 #
-# M0 scope: build the solution (Shared.* projects only, no tests exist yet
-# since they're empty class libraries with no logic to test — see
-# docs/validation/M0/README.md for why "dotnet test" is a documented no-op
-# this milestone, not a skipped step).
+# Branch strategy (see CodingStandards.md): `main` = approved milestones only,
+# `development` = active work. CI runs on pushes and PRs to both.
+#
+# Integration tests use Testcontainers (a real, ephemeral Postgres per test
+# run) — this works out of the box on GitHub's ubuntu-latest runners, which
+# have Docker preinstalled.
 
 name: CI
 
@@ -25,23 +29,25 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     outputs:
-      shared: ${{ steps.filter.outputs.shared }}
+      backend: ${{ steps.filter.outputs.backend }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
-            shared:
-              - 'src/Shared/**'
+            backend:
+              - 'src/**'
+              - 'tests/**'
               - 'Directory.Build.props'
               - 'Directory.Packages.props'
               - 'global.json'
               - 'SeeSight.sln'
+              - '.config/dotnet-tools.json'
 
   build-and-test:
     needs: changes
-    if: needs.changes.outputs.shared == 'true'
+    if: needs.changes.outputs.backend == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -59,7 +65,7 @@ jobs:
         run: dotnet build SeeSight.sln --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test SeeSight.sln --no-build --configuration Release --logger "trx;LogFileName=test-results.trx" --results-directory ./TestResults
+        run: dotnet test SeeSight.sln --no-build --configuration Release --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage" --results-directory ./TestResults
         continue-on-error: false
 
       - name: Publish test results

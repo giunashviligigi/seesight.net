@@ -29,7 +29,27 @@ dotnet_naming_rule.locals_camel_case.style = camel_case
 dotnet_naming_symbols.locals.applicable_kinds = local, parameter
 dotnet_naming_style.camel_case.capitalization = camel_case
 
-# Naming: _camelCase for private fields
+# Naming: PascalCase for private static (readonly) and const fields
+# (conventional exception — evaluated before the general private-field rule
+# below, since naming rules match in declaration order and these are the more
+# specific cases). Two separate symbol specs: "static" and "const" are not
+# simultaneously true for a single field (a const field isn't also "readonly",
+# and requiring both modifiers on one rule matches neither kind).
+dotnet_naming_rule.static_fields_pascal_case.severity = warning
+dotnet_naming_rule.static_fields_pascal_case.symbols = static_fields
+dotnet_naming_rule.static_fields_pascal_case.style = pascal_case
+dotnet_naming_symbols.static_fields.applicable_kinds = field
+dotnet_naming_symbols.static_fields.applicable_accessibilities = private
+dotnet_naming_symbols.static_fields.required_modifiers = static
+
+dotnet_naming_rule.const_fields_pascal_case.severity = warning
+dotnet_naming_rule.const_fields_pascal_case.symbols = const_fields
+dotnet_naming_rule.const_fields_pascal_case.style = pascal_case
+dotnet_naming_symbols.const_fields.applicable_kinds = field
+dotnet_naming_symbols.const_fields.applicable_accessibilities = private
+dotnet_naming_symbols.const_fields.required_modifiers = const
+
+# Naming: _camelCase for (instance) private fields
 dotnet_naming_rule.private_fields_underscore.severity = warning
 dotnet_naming_rule.private_fields_underscore.symbols = private_fields
 dotnet_naming_rule.private_fields_underscore.style = underscore_camel_case
@@ -44,10 +64,18 @@ csharp_new_line_before_open_brace = all
 dotnet_style_qualification_for_field = false:suggestion
 dotnet_style_qualification_for_property = false:suggestion
 dotnet_style_qualification_for_method = false:suggestion
-dotnet_style_require_accessibility_modifiers = always:warning
+# for_non_interface_members: interface members are idiomatically declared
+# without an explicit "public" keyword in C# — only classes/structs need it.
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:warning
 csharp_style_var_for_built_in_types = false:suggestion
 csharp_style_var_when_type_is_apparent = true:suggestion
 dotnet_style_prefer_auto_properties = true:suggestion
+
+# EF Core's `dotnet ef migrations add` always writes generated migration files
+# with a UTF-8 BOM — matched here rather than fought, so every future migration
+# doesn't need a manual BOM-strip step to pass `dotnet format --verify-no-changes`.
+[**/Migrations/*.cs]
+charset = utf-8-bom
 
 [*.{yml,yaml,json}]
 indent_size = 2

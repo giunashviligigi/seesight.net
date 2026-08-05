@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <!--
+      Microsoft.EntityFrameworkCore only (not Npgsql, not .Design) — DbSet<T> is
+      the ORM abstraction itself, not a provider-specific infrastructure concern.
+      IIdentityDbContext is defined here and implemented by the real EF Core
+      DbContext in Infrastructure (Dependency Inversion), a well-established
+      Clean Architecture pattern that avoids a bespoke repository layer on top
+      of what DbContext already provides (docs/Microservices.md §8).
+    -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SeeSight.Identity.Domain\SeeSight.Identity.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SeeSight.SharedKernel\SeeSight.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SeeSight.Shared.Common\SeeSight.Shared.Common.csproj" />
+  </ItemGroup>
+
+</Project>

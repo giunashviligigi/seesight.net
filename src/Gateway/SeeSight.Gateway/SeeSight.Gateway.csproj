@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Yarp.ReverseProxy" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\SeeSight.SharedKernel\SeeSight.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\Shared\SeeSight.Shared.Observability\SeeSight.Shared.Observability.csproj" />
+  </ItemGroup>
+
+</Project>

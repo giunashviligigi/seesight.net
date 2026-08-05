@@ -1,0 +1,35 @@
+  Determining projects to restore...
+  Restored /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Contracts/SeeSight.Shared.Contracts.csproj (in 84 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Common/SeeSight.Shared.Common.csproj (in 84 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Domain/SeeSight.Identity.Domain.csproj (in 84 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/SeeSight.SharedKernel.csproj (in 84 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Application/SeeSight.Identity.Application.csproj (in 97 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Messaging/SeeSight.Shared.Messaging.csproj (in 1 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.UnitTests/SeeSight.Identity.UnitTests.csproj (in 100 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Observability/SeeSight.Shared.Observability.csproj (in 102 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Api/SeeSight.Identity.Api.csproj (in 102 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/tests/Gateway/SeeSight.Gateway.Tests/SeeSight.Gateway.Tests.csproj (in 104 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Gateway/SeeSight.Gateway/SeeSight.Gateway.csproj (in 102 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/SeeSight.Identity.ArchitectureTests.csproj (in 13 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/SeeSight.Identity.IntegrationTests.csproj (in 26 ms).
+  Restored /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Infrastructure/SeeSight.Identity.Infrastructure.csproj (in 33 ms).
+  SeeSight.SharedKernel -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+  SeeSight.Shared.Common -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Common/bin/Release/net9.0/SeeSight.Shared.Common.dll
+  SeeSight.Shared.Contracts -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Contracts/bin/Release/net9.0/SeeSight.Shared.Contracts.dll
+  SeeSight.Identity.Domain -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Domain/bin/Release/net9.0/SeeSight.Identity.Domain.dll
+  SeeSight.Shared.Messaging -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Messaging/bin/Release/net9.0/SeeSight.Shared.Messaging.dll
+  SeeSight.Identity.Application -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Application/bin/Release/net9.0/SeeSight.Identity.Application.dll
+  SeeSight.Shared.Observability -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+  SeeSight.Identity.UnitTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.UnitTests/bin/Release/net9.0/SeeSight.Identity.UnitTests.dll
+  SeeSight.Identity.Infrastructure -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Infrastructure/bin/Release/net9.0/SeeSight.Identity.Infrastructure.dll
+  SeeSight.Identity.Api -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Api/bin/Release/net9.0/SeeSight.Identity.Api.dll
+  SeeSight.Gateway -> /Users/gigi/Desktop/Seesight .net/src/Gateway/SeeSight.Gateway/bin/Release/net9.0/SeeSight.Gateway.dll
+  SeeSight.Identity.ArchitectureTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll
+  SeeSight.Identity.IntegrationTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll
+  SeeSight.Gateway.Tests -> /Users/gigi/Desktop/Seesight .net/tests/Gateway/SeeSight.Gateway.Tests/bin/Release/net9.0/SeeSight.Gateway.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.97

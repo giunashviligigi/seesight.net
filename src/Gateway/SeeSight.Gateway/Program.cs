@@ -1,0 +1,148 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using SeeSight.Gateway.Authentication;
+using SeeSight.Gateway.HealthChecks;
+using SeeSight.Gateway.Proxy;
+using SeeSight.Shared.Observability;
+using Yarp.ReverseProxy.Transforms.Builder;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddJsonFile("yarp.config.json", optional: false, reloadOnChange: true);
+
+// yarp.config.json's cluster destination is a build-time placeholder only.
+// IdentityService:BaseUrl is the one canonical "where is Identity Service"
+// setting (already environment-specific via appsettings.*.json / docker-compose
+// env vars) — this layers it on top of the YARP config so the proxy destination
+// and the JwksCache/health-check HttpClient can never drift apart, which is
+// exactly the class of bug this fixes: the two were previously configured
+// independently, and only the JwksCache one was ever overridden for Docker.
+var identityBaseUrl = builder.Configuration[$"{IdentityServiceOptions.SectionName}:BaseUrl"] ?? "http://localhost:5075";
+builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
+{
+    ["ReverseProxy:Clusters:identity:Destinations:destination1:Address"] = identityBaseUrl,
+});
+
+builder.AddSeeSightObservability("gateway");
+
+builder.Services.AddOptions<IdentityServiceOptions>()
+    .Bind(builder.Configuration.GetSection(IdentityServiceOptions.SectionName));
+builder.Services.AddOptions<AuthCookieOptions>()
+    .Bind(builder.Configuration.GetSection(AuthCookieOptions.SectionName));
+
+builder.Services.AddHttpClient(JwksCache.HttpClientName, (sp, client) =>
+{
+    var options = sp.GetRequiredService<IOptions<IdentityServiceOptions>>().Value;
+    client.BaseAddress = new Uri(options.BaseUrl);
+});
+builder.Services.AddSingleton<JwksCache>();
+builder.Services.AddHostedService<JwksRefreshHostedService>();
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer();
+
+// JwtBearerOptions needs the JwksCache singleton and the configured cookie name —
+// Configure<TDep> resolves them from DI at options-binding time, which a plain
+// AddJwtBearer(Action<JwtBearerOptions>) lambda can't do.
+builder.Services.AddOptions<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme)
+    .Configure<JwksCache, IOptions<AuthCookieOptions>>((options, jwksCache, cookieOptions) =>
+    {
+        options.MapInboundClaims = false;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = "https://seesight.identity",
+            ValidateAudience = true,
+            ValidAudience = "seesight",
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKeyResolver = (_, _, _, _) => jwksCache.GetKeys(),
+        };
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                var cookieName = cookieOptions.Value.Name;
+                if (context.Request.Cookies.TryGetValue(cookieName, out var cookieToken) &&
+                    !string.IsNullOrEmpty(cookieToken))
+                {
+                    context.Token = cookieToken;
+                }
+
+                return Task.CompletedTask;
+            },
+        };
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Authenticated", policy => policy.RequireAuthenticatedUser());
+});
+
+builder.Services
+    .AddReverseProxy()
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+builder.Services.AddSingleton<ITransformProvider, ForwardedIdentityTransformProvider>();
+builder.Services.AddSingleton<ITransformProvider, SetAuthCookieTransformProvider>();
+
+builder.Services.AddCors(options =>
+{
+    var allowedOrigins = builder.Configuration.GetSection("Gateway:AllowedOrigins").Get<string[]>() ?? [];
+    options.AddDefaultPolicy(policy =>
+    {
+        if (allowedOrigins.Length > 0)
+        {
+            policy.WithOrigins(allowedOrigins).AllowCredentials();
+        }
+
+        policy.AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddHealthChecks()
+    .AddCheck<JwksCacheHealthCheck>("jwks-cache", tags: ["ready"]);
+
+var app = builder.Build();
+
+app.UseSeeSightCorrelationId();
+app.UseCors();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapReverseProxy();
+
+app.MapHealthChecks("/health/live", new HealthCheckOptions { Predicate = _ => false });
+app.MapHealthChecks("/health/ready", new HealthCheckOptions { Predicate = check => check.Tags.Contains("ready") });
+
+// Aggregated health — pure convenience fan-out, no business logic (docs/Microservices.md §1).
+app.MapGet("/health", async (IHttpClientFactory httpClientFactory, IOptions<IdentityServiceOptions> identityOptions, CancellationToken cancellationToken) =>
+{
+    var client = httpClientFactory.CreateClient();
+    client.BaseAddress = new Uri(identityOptions.Value.BaseUrl);
+
+    bool identityHealthy;
+    try
+    {
+        var response = await client.GetAsync("/health/ready", cancellationToken).ConfigureAwait(false);
+        identityHealthy = response.IsSuccessStatusCode;
+    }
+    catch (HttpRequestException)
+    {
+        identityHealthy = false;
+    }
+
+    return Results.Json(
+        new { status = identityHealthy ? "Healthy" : "Unhealthy", services = new { identity = identityHealthy ? "Healthy" : "Unhealthy" } },
+        statusCode: identityHealthy ? 200 : 503);
+});
+
+app.Run();
+
+#pragma warning disable CA1050 // required for WebApplicationFactory<Program> in Gateway tests
+public partial class Program;
+#pragma warning restore CA1050

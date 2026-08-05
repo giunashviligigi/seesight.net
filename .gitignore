@@ -7,11 +7,13 @@ out/
 .vs/
 artifacts/
 
-# Test results
+# Test results (except the permanent milestone validation record, which is
+# intentionally committed under docs/validation/M<N>/ — see CodingStandards.md)
 TestResults/
 *.trx
 coverage/
 coverlet.report.*
+!docs/validation/**
 
 # Rider / VS Code
 .idea/

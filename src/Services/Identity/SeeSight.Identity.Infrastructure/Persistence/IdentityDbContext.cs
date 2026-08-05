@@ -1,0 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using SeeSight.Identity.Application.Abstractions;
+using SeeSight.Identity.Domain;
+
+namespace SeeSight.Identity.Infrastructure.Persistence;
+
+public sealed class IdentityDbContext(DbContextOptions<IdentityDbContext> options)
+    : DbContext(options), IIdentityDbContext
+{
+    public DbSet<User> Users => Set<User>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(IdentityDbContext).Assembly);
+    }
+}

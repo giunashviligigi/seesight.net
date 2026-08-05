@@ -12,5 +12,12 @@
     <Product>SeeSight Business</Product>
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <!--
+      CA1716: flags "Shared" (among other words) as a name that collides with a
+      VB.NET reserved keyword. Every SeeSight.Shared.* library is deliberately named
+      per SolutionStructure.md/CodingStandards.md — this project has no VB.NET
+      consumers, so the warning has no actionable value here.
+    -->
+    <NoWarn>$(NoWarn);CA1716</NoWarn>
   </PropertyGroup>
 </Project>

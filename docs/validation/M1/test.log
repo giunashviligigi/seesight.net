@@ -1,0 +1,81 @@
+=== UnitTests ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SeeSight.Shared.Common -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Common/bin/Release/net9.0/SeeSight.Shared.Common.dll
+  SeeSight.SharedKernel -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+  SeeSight.Identity.Domain -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Domain/bin/Release/net9.0/SeeSight.Identity.Domain.dll
+  SeeSight.Identity.Application -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Application/bin/Release/net9.0/SeeSight.Identity.Application.dll
+  SeeSight.Identity.UnitTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.UnitTests/bin/Release/net9.0/SeeSight.Identity.UnitTests.dll
+Test run for /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.UnitTests/bin/Release/net9.0/SeeSight.Identity.UnitTests.dll (.NETCoreApp,Version=v9.0)
+VSTest version 17.12.0 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/UnitTests/UnitTests.trx
+
+Passed!  - Failed:     0, Passed:    33, Skipped:     0, Total:    33, Duration: 239 ms - SeeSight.Identity.UnitTests.dll (net9.0)
+
+Attachments:
+  /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/UnitTests/48cc4315-4e71-4654-af7a-c8907a093a4a/coverage.cobertura.xml
+=== IntegrationTests ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SeeSight.Shared.Common -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Common/bin/Release/net9.0/SeeSight.Shared.Common.dll
+  SeeSight.SharedKernel -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+  SeeSight.Identity.Domain -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Domain/bin/Release/net9.0/SeeSight.Identity.Domain.dll
+  SeeSight.Shared.Observability -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+  SeeSight.Identity.Application -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Application/bin/Release/net9.0/SeeSight.Identity.Application.dll
+  SeeSight.Identity.Infrastructure -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Infrastructure/bin/Release/net9.0/SeeSight.Identity.Infrastructure.dll
+  SeeSight.Identity.Api -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Api/bin/Release/net9.0/SeeSight.Identity.Api.dll
+  SeeSight.Identity.IntegrationTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll
+Test run for /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll (.NETCoreApp,Version=v9.0)
+VSTest version 17.12.0 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/IntegrationTests/IntegrationTests.trx
+
+Passed!  - Failed:     0, Passed:     9, Skipped:     0, Total:     9, Duration: 1 s - SeeSight.Identity.IntegrationTests.dll (net9.0)
+
+Attachments:
+  /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/IntegrationTests/60080a4f-5906-49ff-b633-1c793d14efa6/coverage.cobertura.xml
+=== ArchitectureTests ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SeeSight.Shared.Common -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Common/bin/Release/net9.0/SeeSight.Shared.Common.dll
+  SeeSight.SharedKernel -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+  SeeSight.Shared.Observability -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+  SeeSight.Identity.Domain -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Domain/bin/Release/net9.0/SeeSight.Identity.Domain.dll
+  SeeSight.Identity.Application -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Application/bin/Release/net9.0/SeeSight.Identity.Application.dll
+  SeeSight.Identity.Infrastructure -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Infrastructure/bin/Release/net9.0/SeeSight.Identity.Infrastructure.dll
+  SeeSight.Identity.Api -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Api/bin/Release/net9.0/SeeSight.Identity.Api.dll
+  SeeSight.Identity.ArchitectureTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll
+Test run for /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Release/net9.0/SeeSight.Identity.ArchitectureTests.dll (.NETCoreApp,Version=v9.0)
+VSTest version 17.12.0 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/ArchitectureTests/ArchitectureTests.trx
+
+Passed!  - Failed:     0, Passed:    15, Skipped:     0, Total:    15, Duration: 66 ms - SeeSight.Identity.ArchitectureTests.dll (net9.0)
+
+Attachments:
+  /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/ArchitectureTests/2efac421-de8a-40ae-8aaa-9ca5892e06b1/coverage.cobertura.xml
+=== GatewayTests ===
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SeeSight.SharedKernel -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+  SeeSight.Shared.Observability -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+  SeeSight.Gateway -> /Users/gigi/Desktop/Seesight .net/src/Gateway/SeeSight.Gateway/bin/Release/net9.0/SeeSight.Gateway.dll
+  SeeSight.Gateway.Tests -> /Users/gigi/Desktop/Seesight .net/tests/Gateway/SeeSight.Gateway.Tests/bin/Release/net9.0/SeeSight.Gateway.Tests.dll
+Test run for /Users/gigi/Desktop/Seesight .net/tests/Gateway/SeeSight.Gateway.Tests/bin/Release/net9.0/SeeSight.Gateway.Tests.dll (.NETCoreApp,Version=v9.0)
+VSTest version 17.12.0 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/GatewayTests/GatewayTests.trx
+
+Passed!  - Failed:     0, Passed:     5, Skipped:     0, Total:     5, Duration: 46 ms - SeeSight.Gateway.Tests.dll (net9.0)
+
+Attachments:
+  /Users/gigi/Desktop/Seesight .net/docs/validation/M1/TestResults/GatewayTests/f4cb3276-c1bc-4305-bc9e-f4022bd24363/coverage.cobertura.xml

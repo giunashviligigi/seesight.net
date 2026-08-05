@@ -1,0 +1,13 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+    <!--
+      CA1707 (no underscores in identifiers) fights the standard, widely-used
+      xUnit convention of readable_snake_case test method names — suppressed
+      here, scoped to test projects only, so production code (root
+      Directory.Build.props) still enforces it.
+    -->
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+</Project>
