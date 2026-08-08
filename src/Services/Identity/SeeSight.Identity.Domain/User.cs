@@ -61,4 +61,22 @@ public sealed class User
     /// never a distinguishable error; see docs/Authentication.md §4).
     /// </summary>
     public bool CanAuthenticate => Status == UserStatus.Active;
+
+    /// <summary>
+    /// Shared by both the reset-password and change-password flows: replaces the
+    /// password hash and clears <see cref="MustChangePassword"/> — the only two
+    /// paths that lift the forced-change flag, per docs/Authentication.md §4.
+    /// <paramref name="newPasswordHash"/> must already be hashed — whether it
+    /// differs from the current password, and whether the caller is even allowed
+    /// to make this change, are Application-layer concerns (they need
+    /// <c>IPasswordHasher</c>/token validation this entity doesn't have).
+    /// </summary>
+    public void SetPasswordHash(string newPasswordHash, DateTimeOffset now)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(newPasswordHash);
+
+        PasswordHash = newPasswordHash;
+        MustChangePassword = false;
+        UpdatedAt = now;
+    }
 }

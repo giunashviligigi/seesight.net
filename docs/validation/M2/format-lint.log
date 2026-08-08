@@ -1,0 +1,3 @@
+$ dotnet format SeeSight.sln --verify-no-changes
+(no output — no formatting violations found)
+Exit code: 0

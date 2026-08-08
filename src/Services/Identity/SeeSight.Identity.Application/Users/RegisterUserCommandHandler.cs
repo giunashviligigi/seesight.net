@@ -10,6 +10,8 @@ public sealed class RegisterUserCommandHandler(
     IIdentityDbContext dbContext,
     IPasswordHasher passwordHasher,
     IJwtIssuer jwtIssuer,
+    IOpaqueTokenGenerator tokenGenerator,
+    ITokenHasher tokenHasher,
     TimeProvider timeProvider) : IRequestHandler<RegisterUserCommand, AuthResult>
 {
     public async Task<AuthResult> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
@@ -26,10 +28,17 @@ public sealed class RegisterUserCommandHandler(
             throw new EmailAlreadyInUseException();
         }
 
+        var now = timeProvider.GetUtcNow();
         var passwordHash = passwordHasher.Hash(request.Password);
-        var user = User.Register(request.Email, passwordHash, request.FirstName, request.LastName, timeProvider.GetUtcNow());
+        var user = User.Register(request.Email, passwordHash, request.FirstName, request.LastName, now);
 
         dbContext.Users.Add(user);
+
+        // Self-signup logs the user in immediately, same as login — the original
+        // system sets the session cookie on both register and login (docs/Authentication.md §4).
+        var accessToken = jwtIssuer.IssueAccessToken(user);
+        var (refreshTokenEntity, rawRefreshToken) = RefreshTokenIssuance.IssueAndTrack(
+            dbContext, tokenGenerator, tokenHasher, jwtIssuer, user.Id, request.IpAddress, now);
 
         try
         {
@@ -43,10 +52,11 @@ public sealed class RegisterUserCommandHandler(
             throw new EmailAlreadyInUseException();
         }
 
-        // Self-signup logs the user in immediately, same as login — the original
-        // system sets the session cookie on both register and login (docs/Authentication.md §4).
-        var accessToken = jwtIssuer.IssueAccessToken(user);
-
-        return new AuthResult(accessToken.Value, accessToken.ExpiresAt, UserDto.FromDomain(user));
+        return new AuthResult(
+            accessToken.Value,
+            accessToken.ExpiresAt,
+            rawRefreshToken,
+            refreshTokenEntity.ExpiresAt,
+            UserDto.FromDomain(user));
     }
 }

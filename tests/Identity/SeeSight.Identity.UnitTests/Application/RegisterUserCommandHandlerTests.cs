@@ -13,31 +13,43 @@ public sealed class RegisterUserCommandHandlerTests : IDisposable
     private readonly FakeIdentityDbContext _dbContext = new();
     private readonly IPasswordHasher _passwordHasher = Substitute.For<IPasswordHasher>();
     private readonly IJwtIssuer _jwtIssuer = Substitute.For<IJwtIssuer>();
+    private readonly IOpaqueTokenGenerator _tokenGenerator = Substitute.For<IOpaqueTokenGenerator>();
+    private readonly ITokenHasher _tokenHasher = Substitute.For<ITokenHasher>();
     private readonly TimeProvider _timeProvider = TimeProvider.System;
 
     public void Dispose() => _dbContext.Dispose();
 
     private RegisterUserCommandHandler CreateHandler() =>
-        new(_dbContext, _passwordHasher, _jwtIssuer, _timeProvider);
+        new(_dbContext, _passwordHasher, _jwtIssuer, _tokenGenerator, _tokenHasher, _timeProvider);
 
     [Fact]
-    public async Task Handle_creates_a_user_and_returns_an_access_token_for_a_new_email()
+    public async Task Handle_creates_a_user_and_returns_an_access_and_refresh_token_for_a_new_email()
     {
         _passwordHasher.Hash("SecurePass123").Returns("hashed-value");
-        var expectedExpiry = DateTimeOffset.UtcNow.AddMinutes(15);
-        _jwtIssuer.IssueAccessToken(Arg.Any<User>()).Returns(new AccessToken("token-value", expectedExpiry));
+        var accessExpiry = DateTimeOffset.UtcNow.AddMinutes(15);
+        var refreshExpiry = DateTimeOffset.UtcNow.AddDays(30);
+        _jwtIssuer.IssueAccessToken(Arg.Any<User>()).Returns(new AccessToken("access-token-value", accessExpiry));
+        _jwtIssuer.ComputeRefreshTokenExpiry(Arg.Any<DateTimeOffset>()).Returns(refreshExpiry);
+        _tokenGenerator.Generate().Returns("raw-refresh-token");
+        _tokenHasher.Hash("raw-refresh-token").Returns("hashed-refresh-token");
 
         var handler = CreateHandler();
         var command = new RegisterUserCommand("new@example.com", "SecurePass123", "First", "Last");
 
         var result = await handler.Handle(command, CancellationToken.None);
 
-        result.AccessToken.Should().Be("token-value");
-        result.ExpiresAt.Should().Be(expectedExpiry);
+        result.AccessToken.Should().Be("access-token-value");
+        result.AccessTokenExpiresAt.Should().Be(accessExpiry);
+        result.RefreshToken.Should().Be("raw-refresh-token");
+        result.RefreshTokenExpiresAt.Should().Be(refreshExpiry);
         result.User.Email.Should().Be("new@example.com");
 
-        var stored = _dbContext.Users.Single();
-        stored.PasswordHash.Should().Be("hashed-value");
+        var storedUser = _dbContext.Users.Single();
+        storedUser.PasswordHash.Should().Be("hashed-value");
+
+        var storedRefreshToken = _dbContext.RefreshTokens.Single();
+        storedRefreshToken.TokenHash.Should().Be("hashed-refresh-token");
+        storedRefreshToken.UserId.Should().Be(storedUser.Id);
     }
 
     [Fact]

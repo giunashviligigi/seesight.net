@@ -45,7 +45,7 @@ public sealed class ForwardedIdentityTransformProvider : ITransformProvider
                     request.Headers.Add(ForwardedIdentityHeaders.UserRole, role);
                 }
 
-                if (user.FindFirst("companyId")?.Value is { Length: > 0 } companyId)
+                if (user.FindFirst(SeeSightClaimTypes.CompanyId)?.Value is { Length: > 0 } companyId)
                 {
                     request.Headers.Add(ForwardedIdentityHeaders.CompanyId, companyId);
                 }

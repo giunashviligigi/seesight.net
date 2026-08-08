@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b6c5a471-415d-4f34-83ab-6474a1392cf5" name="@Gigis-MacBook-Air 2026-08-08 23:38:00" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-08-08T23:38:00.4182150+04:00" queuing="2026-08-08T23:38:00.4182150+04:00" start="2026-08-08T23:37:55.0290160+04:00" finish="2026-08-08T23:38:03.1629980+04:00" />
+  <TestSettings name="default" id="17a7bf14-023f-401f-90e1-04af7c6c82ec">
+    <Deployment runDeploymentRoot="_Gigis-MacBook-Air_2026-08-08_23_38_00" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="81a5e0f7-0799-4949-962c-c01f2e64f88c" testId="e20d5961-b3e6-2a63-be69-bf3660b638dd" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Logout_with_no_token_is_a_no_op_204" computerName="Gigis-MacBook-Air" duration="00:00:00.0008509" startTime="2026-08-08T23:38:01.9507940+04:00" endTime="2026-08-08T23:38:01.9507940+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81a5e0f7-0799-4949-962c-c01f2e64f88c" />
+    <UnitTestResult executionId="a6b04060-ca93-4750-98f3-1ba299d1bf81" testId="ec6208a3-b5b6-7b5e-a0f8-1ed11d685e18" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_an_unknown_token_returns_401" computerName="Gigis-MacBook-Air" duration="00:00:00.0083094" startTime="2026-08-08T23:38:00.5462850+04:00" endTime="2026-08-08T23:38:00.5462850+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a6b04060-ca93-4750-98f3-1ba299d1bf81" />
+    <UnitTestResult executionId="fa26d1fe-7981-4fd1-bfd8-b6056d6d348c" testId="b2e28f64-c7f0-9776-adcd-0394520178db" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ForgotPassword_then_ResetPassword_then_login_with_the_new_password_succeeds" computerName="Gigis-MacBook-Air" duration="00:00:01.6327320" startTime="2026-08-08T23:38:00.5378350+04:00" endTime="2026-08-08T23:38:00.5378350+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa26d1fe-7981-4fd1-bfd8-b6056d6d348c" />
+    <UnitTestResult executionId="25818f47-c4a1-402f-a7e7-08d109bf4657" testId="00b28b65-2271-3352-fde0-a0dc9558dfd6" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ForgotPassword_for_an_unknown_email_returns_a_generic_response_with_no_debug_token" computerName="Gigis-MacBook-Air" duration="00:00:00.0019250" startTime="2026-08-08T23:38:01.9498500+04:00" endTime="2026-08-08T23:38:01.9498500+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25818f47-c4a1-402f-a7e7-08d109bf4657" />
+    <UnitTestResult executionId="c75dceb0-d879-4b4a-a721-0000dec62bef" testId="6b5f8b76-2c4e-6b5c-5b2b-3a8a38de5e41" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_then_login_then_me_returns_the_same_user" computerName="Gigis-MacBook-Air" duration="00:00:00.6042949" startTime="2026-08-08T23:38:00.5611960+04:00" endTime="2026-08-08T23:38:00.5611960+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c75dceb0-d879-4b4a-a721-0000dec62bef" />
+    <UnitTestResult executionId="2c26a815-b94e-4a85-a92a-9f29ee2b0e22" testId="2e9ac637-bb87-a74e-8eaf-0093fd6dd4b3" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_rejects_an_invalid_password" computerName="Gigis-MacBook-Air" duration="00:00:00.0054761" startTime="2026-08-08T23:38:00.5929050+04:00" endTime="2026-08-08T23:38:00.5929050+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c26a815-b94e-4a85-a92a-9f29ee2b0e22" />
+    <UnitTestResult executionId="b9efc346-499e-48fa-b134-1c4b9f43d720" testId="ac781a86-6f33-36d7-a6ae-885112da0467" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ChangePassword_with_the_wrong_current_password_returns_400" computerName="Gigis-MacBook-Air" duration="00:00:00.4500492" startTime="2026-08-08T23:38:01.4771000+04:00" endTime="2026-08-08T23:38:01.4771000+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b9efc346-499e-48fa-b134-1c4b9f43d720" />
+    <UnitTestResult executionId="89df428e-5033-4241-8b40-3a1a7220145d" testId="edc3c4db-d905-f307-d01d-b31e1262d3a0" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_rejects_an_unmapped_json_property" computerName="Gigis-MacBook-Air" duration="00:00:00.0029554" startTime="2026-08-08T23:38:00.5873090+04:00" endTime="2026-08-08T23:38:00.5873090+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="89df428e-5033-4241-8b40-3a1a7220145d" />
+    <UnitTestResult executionId="833aa6a4-be22-4afc-ab5b-002edcd6a960" testId="94923e8e-d6b9-f57e-8b36-a5cc99212e56" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Login_for_an_unknown_email_returns_401" computerName="Gigis-MacBook-Air" duration="00:00:00.0026838" startTime="2026-08-08T23:38:00.5640180+04:00" endTime="2026-08-08T23:38:00.5640180+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="833aa6a4-be22-4afc-ab5b-002edcd6a960" />
+    <UnitTestResult executionId="9306a8aa-41c6-4a38-b602-eb631adcc6a3" testId="b35d4a13-be05-c825-938e-3ec4e70b5499" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Login_with_the_wrong_password_returns_401" computerName="Gigis-MacBook-Air" duration="00:00:01.0500593" startTime="2026-08-08T23:37:59.9566130+04:00" endTime="2026-08-08T23:37:59.9566200+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9306a8aa-41c6-4a38-b602-eb631adcc6a3" />
+    <UnitTestResult executionId="6853b9d2-78ae-4e6e-bdfc-96d637fbe6bb" testId="39dfcd0d-52f7-b00a-d3aa-1d46486d294b" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_with_an_already_used_email_returns_409" computerName="Gigis-MacBook-Air" duration="00:00:00.2256985" startTime="2026-08-08T23:38:00.8187200+04:00" endTime="2026-08-08T23:38:00.8187210+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6853b9d2-78ae-4e6e-bdfc-96d637fbe6bb" />
+    <UnitTestResult executionId="9b9a13f3-bc37-488e-8480-a520fbd5d8c5" testId="8b5d1347-8bf3-c979-9405-e18383584ddd" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Logout_revokes_the_refresh_token_so_it_can_no_longer_be_used" computerName="Gigis-MacBook-Air" duration="00:00:00.2322272" startTime="2026-08-08T23:38:01.7094820+04:00" endTime="2026-08-08T23:38:01.7094820+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b9a13f3-bc37-488e-8480-a520fbd5d8c5" />
+    <UnitTestResult executionId="85e5b44d-a006-40f2-b6c1-ee89c29e77d6" testId="ce0ff41e-4e9f-9f97-2ede-933a8d296e23" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ChangePassword_with_the_correct_current_password_succeeds_and_the_new_password_can_log_in" computerName="Gigis-MacBook-Air" duration="00:00:00.8828164" startTime="2026-08-08T23:38:02.8337620+04:00" endTime="2026-08-08T23:38:02.8337620+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="85e5b44d-a006-40f2-b6c1-ee89c29e77d6" />
+    <UnitTestResult executionId="d50c8888-54e2-4a89-8bb2-386818c0b3ab" testId="0c94e571-53ca-48af-54cb-4201889a81eb" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ResetPassword_with_an_invalid_token_returns_400" computerName="Gigis-MacBook-Air" duration="00:00:00.0018763" startTime="2026-08-08T23:38:01.9478340+04:00" endTime="2026-08-08T23:38:01.9478340+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d50c8888-54e2-4a89-8bb2-386818c0b3ab" />
+    <UnitTestResult executionId="70cf6bc3-b4da-4143-9873-4b39d0454ec3" testId="3eb88e10-7a04-8e38-ce81-c3c9b48fc1c9" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Register_returns_both_an_access_and_a_refresh_token" computerName="Gigis-MacBook-Air" duration="00:00:00.2341067" startTime="2026-08-08T23:38:01.0268990+04:00" endTime="2026-08-08T23:38:01.0268990+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70cf6bc3-b4da-4143-9873-4b39d0454ec3" />
+    <UnitTestResult executionId="bc98d49f-6b79-4992-89aa-405c2fe08ad9" testId="03d9768d-3350-f02e-8794-9c3088295256" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Health_endpoints_report_healthy" computerName="Gigis-MacBook-Air" duration="00:00:00.0121220" startTime="2026-08-08T23:38:00.5763840+04:00" endTime="2026-08-08T23:38:00.5763840+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bc98d49f-6b79-4992-89aa-405c2fe08ad9" />
+    <UnitTestResult executionId="a1ce2457-bf54-4311-97ac-c8b79dbb791d" testId="d9c92ef4-57a7-b244-f387-bce4406592e7" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ChangePassword_without_an_identity_header_returns_401" computerName="Gigis-MacBook-Air" duration="00:00:00.0030227" startTime="2026-08-08T23:38:00.7925720+04:00" endTime="2026-08-08T23:38:00.7925720+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a1ce2457-bf54-4311-97ac-c8b79dbb791d" />
+    <UnitTestResult executionId="ec9c1cd7-0fa8-4b0b-8115-d02f50cdfec1" testId="4555d7c2-a057-9127-92f7-fe1d3fbb1343" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Jwks_endpoint_returns_only_public_key_material" computerName="Gigis-MacBook-Air" duration="00:00:00.0044963" startTime="2026-08-08T23:38:00.5842680+04:00" endTime="2026-08-08T23:38:00.5842680+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ec9c1cd7-0fa8-4b0b-8115-d02f50cdfec1" />
+    <UnitTestResult executionId="7655917c-095c-4b8f-b13d-66ee47662c40" testId="e6d12dec-bb96-a12c-3062-44f82af3fa1c" testName="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Me_without_an_identity_header_returns_401" computerName="Gigis-MacBook-Air" duration="00:00:00.0031231" startTime="2026-08-08T23:38:00.5796260+04:00" endTime="2026-08-08T23:38:00.5796260+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7655917c-095c-4b8f-b13d-66ee47662c40" />
+    <UnitTestResult executionId="bfd7bdf3-b484-41b9-b93c-7d4bb1b533a5" testId="adabf2f7-84dc-359b-5e69-1ff43c754995" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_an_already_rotated_token_is_rejected" computerName="Gigis-MacBook-Air" duration="00:00:00.2429011" startTime="2026-08-08T23:38:00.7893870+04:00" endTime="2026-08-08T23:38:00.7893870+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bfd7bdf3-b484-41b9-b93c-7d4bb1b533a5" />
+    <UnitTestResult executionId="b697c29d-128c-420f-a316-2217442245c5" testId="a512ad1e-f89c-8a2a-9e19-1f15e875c717" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_no_token_at_all_returns_401" computerName="Gigis-MacBook-Air" duration="00:00:00.0011818" startTime="2026-08-08T23:38:01.9458550+04:00" endTime="2026-08-08T23:38:01.9458550+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b697c29d-128c-420f-a316-2217442245c5" />
+    <UnitTestResult executionId="5c67fe29-f9c2-4ba5-be1c-cf23f682b22b" testId="a5c7e909-8d6e-3ca8-0515-4129acc21429" testName="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_a_valid_token_rotates_to_a_new_token_pair" computerName="Gigis-MacBook-Air" duration="00:00:00.2349439" startTime="2026-08-08T23:38:01.9445730+04:00" endTime="2026-08-08T23:38:01.9445730+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c67fe29-f9c2-4ba5-be1c-cf23f682b22b" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ForgotPassword_for_an_unknown_email_returns_a_generic_response_with_no_debug_token" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="00b28b65-2271-3352-fde0-a0dc9558dfd6">
+      <Execution id="25818f47-c4a1-402f-a7e7-08d109bf4657" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="ForgotPassword_for_an_unknown_email_returns_a_generic_response_with_no_debug_token" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_with_an_already_used_email_returns_409" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="39dfcd0d-52f7-b00a-d3aa-1d46486d294b">
+      <Execution id="6853b9d2-78ae-4e6e-bdfc-96d637fbe6bb" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Register_with_an_already_used_email_returns_409" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_then_login_then_me_returns_the_same_user" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="6b5f8b76-2c4e-6b5c-5b2b-3a8a38de5e41">
+      <Execution id="c75dceb0-d879-4b4a-a721-0000dec62bef" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Register_then_login_then_me_returns_the_same_user" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_an_unknown_token_returns_401" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="ec6208a3-b5b6-7b5e-a0f8-1ed11d685e18">
+      <Execution id="a6b04060-ca93-4750-98f3-1ba299d1bf81" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="Refresh_with_an_unknown_token_returns_401" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_rejects_an_invalid_password" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="2e9ac637-bb87-a74e-8eaf-0093fd6dd4b3">
+      <Execution id="2c26a815-b94e-4a85-a92a-9f29ee2b0e22" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Register_rejects_an_invalid_password" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ChangePassword_with_the_wrong_current_password_returns_400" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="ac781a86-6f33-36d7-a6ae-885112da0467">
+      <Execution id="b9efc346-499e-48fa-b134-1c4b9f43d720" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="ChangePassword_with_the_wrong_current_password_returns_400" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Login_for_an_unknown_email_returns_401" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="94923e8e-d6b9-f57e-8b36-a5cc99212e56">
+      <Execution id="833aa6a4-be22-4afc-ab5b-002edcd6a960" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Login_for_an_unknown_email_returns_401" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_no_token_at_all_returns_401" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="a512ad1e-f89c-8a2a-9e19-1f15e875c717">
+      <Execution id="b697c29d-128c-420f-a316-2217442245c5" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="Refresh_with_no_token_at_all_returns_401" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Login_with_the_wrong_password_returns_401" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="b35d4a13-be05-c825-938e-3ec4e70b5499">
+      <Execution id="9306a8aa-41c6-4a38-b602-eb631adcc6a3" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Login_with_the_wrong_password_returns_401" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Register_rejects_an_unmapped_json_property" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="edc3c4db-d905-f307-d01d-b31e1262d3a0">
+      <Execution id="89df428e-5033-4241-8b40-3a1a7220145d" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Register_rejects_an_unmapped_json_property" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ChangePassword_with_the_correct_current_password_succeeds_and_the_new_password_can_log_in" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="ce0ff41e-4e9f-9f97-2ede-933a8d296e23">
+      <Execution id="85e5b44d-a006-40f2-b6c1-ee89c29e77d6" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="ChangePassword_with_the_correct_current_password_succeeds_and_the_new_password_can_log_in" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ForgotPassword_then_ResetPassword_then_login_with_the_new_password_succeeds" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="b2e28f64-c7f0-9776-adcd-0394520178db">
+      <Execution id="fa26d1fe-7981-4fd1-bfd8-b6056d6d348c" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="ForgotPassword_then_ResetPassword_then_login_with_the_new_password_succeeds" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_an_already_rotated_token_is_rejected" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="adabf2f7-84dc-359b-5e69-1ff43c754995">
+      <Execution id="bfd7bdf3-b484-41b9-b93c-7d4bb1b533a5" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="Refresh_with_an_already_rotated_token_is_rejected" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ResetPassword_with_an_invalid_token_returns_400" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="0c94e571-53ca-48af-54cb-4201889a81eb">
+      <Execution id="d50c8888-54e2-4a89-8bb2-386818c0b3ab" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="ResetPassword_with_an_invalid_token_returns_400" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Me_without_an_identity_header_returns_401" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="e6d12dec-bb96-a12c-3062-44f82af3fa1c">
+      <Execution id="7655917c-095c-4b8f-b13d-66ee47662c40" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Me_without_an_identity_header_returns_401" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.ChangePassword_without_an_identity_header_returns_401" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="d9c92ef4-57a7-b244-f387-bce4406592e7">
+      <Execution id="a1ce2457-bf54-4311-97ac-c8b79dbb791d" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="ChangePassword_without_an_identity_header_returns_401" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Logout_revokes_the_refresh_token_so_it_can_no_longer_be_used" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="8b5d1347-8bf3-c979-9405-e18383584ddd">
+      <Execution id="9b9a13f3-bc37-488e-8480-a520fbd5d8c5" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="Logout_revokes_the_refresh_token_so_it_can_no_longer_be_used" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Jwks_endpoint_returns_only_public_key_material" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="4555d7c2-a057-9127-92f7-fe1d3fbb1343">
+      <Execution id="ec9c1cd7-0fa8-4b0b-8115-d02f50cdfec1" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Jwks_endpoint_returns_only_public_key_material" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Logout_with_no_token_is_a_no_op_204" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="e20d5961-b3e6-2a63-be69-bf3660b638dd">
+      <Execution id="81a5e0f7-0799-4949-962c-c01f2e64f88c" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="Logout_with_no_token_is_a_no_op_204" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.AuthEndpointsTests.Health_endpoints_report_healthy" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="03d9768d-3350-f02e-8794-9c3088295256">
+      <Execution id="bc98d49f-6b79-4992-89aa-405c2fe08ad9" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.AuthEndpointsTests" name="Health_endpoints_report_healthy" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Refresh_with_a_valid_token_rotates_to_a_new_token_pair" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="a5c7e909-8d6e-3ca8-0515-4129acc21429">
+      <Execution id="5c67fe29-f9c2-4ba5-be1c-cf23f682b22b" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="Refresh_with_a_valid_token_rotates_to_a_new_token_pair" />
+    </UnitTest>
+    <UnitTest name="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests.Register_returns_both_an_access_and_a_refresh_token" storage="/users/gigi/desktop/seesight .net/tests/identity/seesight.identity.integrationtests/bin/release/net9.0/seesight.identity.integrationtests.dll" id="3eb88e10-7a04-8e38-ce81-c3c9b48fc1c9">
+      <Execution id="70cf6bc3-b4da-4143-9873-4b39d0454ec3" />
+      <TestMethod codeBase="/Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Release/net9.0/SeeSight.Identity.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SeeSight.Identity.IntegrationTests.RefreshAndPasswordFlowsTests" name="Register_returns_both_an_access_and_a_refresh_token" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e20d5961-b3e6-2a63-be69-bf3660b638dd" executionId="81a5e0f7-0799-4949-962c-c01f2e64f88c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ec6208a3-b5b6-7b5e-a0f8-1ed11d685e18" executionId="a6b04060-ca93-4750-98f3-1ba299d1bf81" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2e28f64-c7f0-9776-adcd-0394520178db" executionId="fa26d1fe-7981-4fd1-bfd8-b6056d6d348c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00b28b65-2271-3352-fde0-a0dc9558dfd6" executionId="25818f47-c4a1-402f-a7e7-08d109bf4657" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b5f8b76-2c4e-6b5c-5b2b-3a8a38de5e41" executionId="c75dceb0-d879-4b4a-a721-0000dec62bef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e9ac637-bb87-a74e-8eaf-0093fd6dd4b3" executionId="2c26a815-b94e-4a85-a92a-9f29ee2b0e22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac781a86-6f33-36d7-a6ae-885112da0467" executionId="b9efc346-499e-48fa-b134-1c4b9f43d720" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="edc3c4db-d905-f307-d01d-b31e1262d3a0" executionId="89df428e-5033-4241-8b40-3a1a7220145d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="94923e8e-d6b9-f57e-8b36-a5cc99212e56" executionId="833aa6a4-be22-4afc-ab5b-002edcd6a960" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b35d4a13-be05-c825-938e-3ec4e70b5499" executionId="9306a8aa-41c6-4a38-b602-eb631adcc6a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39dfcd0d-52f7-b00a-d3aa-1d46486d294b" executionId="6853b9d2-78ae-4e6e-bdfc-96d637fbe6bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8b5d1347-8bf3-c979-9405-e18383584ddd" executionId="9b9a13f3-bc37-488e-8480-a520fbd5d8c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce0ff41e-4e9f-9f97-2ede-933a8d296e23" executionId="85e5b44d-a006-40f2-b6c1-ee89c29e77d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c94e571-53ca-48af-54cb-4201889a81eb" executionId="d50c8888-54e2-4a89-8bb2-386818c0b3ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3eb88e10-7a04-8e38-ce81-c3c9b48fc1c9" executionId="70cf6bc3-b4da-4143-9873-4b39d0454ec3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="03d9768d-3350-f02e-8794-9c3088295256" executionId="bc98d49f-6b79-4992-89aa-405c2fe08ad9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d9c92ef4-57a7-b244-f387-bce4406592e7" executionId="a1ce2457-bf54-4311-97ac-c8b79dbb791d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4555d7c2-a057-9127-92f7-fe1d3fbb1343" executionId="ec9c1cd7-0fa8-4b0b-8115-d02f50cdfec1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6d12dec-bb96-a12c-3062-44f82af3fa1c" executionId="7655917c-095c-4b8f-b13d-66ee47662c40" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="adabf2f7-84dc-359b-5e69-1ff43c754995" executionId="bfd7bdf3-b484-41b9-b93c-7d4bb1b533a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a512ad1e-f89c-8a2a-9e19-1f15e875c717" executionId="b697c29d-128c-420f-a316-2217442245c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a5c7e909-8d6e-3ca8-0515-4129acc21429" executionId="5c67fe29-f9c2-4ba5-be1c-cf23f682b22b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="22" executed="22" passed="22" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 9.0.18)
+[xUnit.net 00:00:00.03]   Discovering: SeeSight.Identity.IntegrationTests
+[xUnit.net 00:00:00.04]   Discovered:  SeeSight.Identity.IntegrationTests
+[xUnit.net 00:00:00.05]   Starting:    SeeSight.Identity.IntegrationTests
+[testcontainers.org 00:00:00.08] Connected to Docker:
+  Host: unix:///var/run/docker.sock
+  Server Version: 29.6.2
+  Kernel Version: 6.12.76-linuxkit
+  API Version: 1.55
+  Operating System: Docker Desktop
+  Total Memory: 7.75 GB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/gigi/Library/Containers/com.docker.docker/Data/docker-cli.sock
+[testcontainers.org 00:00:00.19] Docker container 311e739c7848 created
+[testcontainers.org 00:00:00.21] Start Docker container 311e739c7848
+[testcontainers.org 00:00:00.28] Wait for Docker container 311e739c7848 to complete readiness checks
+[testcontainers.org 00:00:01.31] Docker container 311e739c7848 ready
+[testcontainers.org 00:00:01.36] Docker container 05e15bf721de created
+[testcontainers.org 00:00:01.36] Docker container 4a4797cac978 created
+[testcontainers.org 00:00:01.37] Start Docker container 05e15bf721de
+[testcontainers.org 00:00:01.37] Start Docker container 4a4797cac978
+[testcontainers.org 00:00:01.44] Wait for Docker container 05e15bf721de to complete readiness checks
+[testcontainers.org 00:00:01.45] Execute "pg_isready --host localhost --dbname identity --username seesight" at Docker container 05e15bf721de
+[testcontainers.org 00:00:01.45] Wait for Docker container 4a4797cac978 to complete readiness checks
+[testcontainers.org 00:00:01.46] Execute "pg_isready --host localhost --dbname identity --username seesight" at Docker container 4a4797cac978
+[testcontainers.org 00:00:02.51] Execute "pg_isready --host localhost --dbname identity --username seesight" at Docker container 05e15bf721de
+[testcontainers.org 00:00:02.51] Execute "pg_isready --host localhost --dbname identity --username seesight" at Docker container 4a4797cac978
+[testcontainers.org 00:00:02.57] Docker container 4a4797cac978 ready
+[testcontainers.org 00:00:02.57] Docker container 05e15bf721de ready
+[23:37:58 INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[23:37:58 INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[23:37:58 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+[23:37:58 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+[23:37:58 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+[23:37:58 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[23:37:58 INF] No migrations were applied. The database is already up to date.
+[23:37:58 INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+[23:37:58 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[23:37:58 INF] No migrations were applied. The database is already up to date.
+[23:37:58 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:37:58 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:37:58 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:37:58 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:37:58 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:37:58 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:37:58 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:37:58 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:37:58 WRN] No JWT signing key configured — generating an ephemeral RSA key pair for Development. Tokens will not survive a restart of this process.
+[23:37:58 WRN] No JWT signing key configured — generating an ephemeral RSA key pair for Development. Tokens will not survive a restart of this process.
+[23:37:59 INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:37:59 INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:37:59 INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO users ("Id", "CompanyId", "CreatedAt", "Email", "FirstName", "LastName", "MustChangePassword", "PasswordHash", "Role", "Status", "UpdatedAt")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+[23:37:59 INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO users ("Id", "CompanyId", "CreatedAt", "Email", "FirstName", "LastName", "MustChangePassword", "PasswordHash", "Role", "Status", "UpdatedAt")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+[23:37:59 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 598.8738ms.
+[23:37:59 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 598.8692ms.
+[23:37:59 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:37:59 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:37:59 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 623.5497ms
+[23:37:59 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 623.5517ms
+[23:37:59 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:37:59 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:37:59 INF] Request starting HTTP/1.1 POST http://localhost/auth/login - application/json; charset=utf-8 92
+[23:37:59 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 654.4704ms
+[23:37:59 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 654.4707ms
+[23:37:59 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:37:59 INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Login(SeeSight.Identity.Api.Contracts.LoginRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:37:59 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) - Validation state: Valid
+[23:37:59 INF] Request starting HTTP/1.1 POST http://localhost/auth/forgot-password - application/json; charset=utf-8 65
+[23:37:59 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api)'
+[23:37:59 INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.ForgotPasswordResponse]] ForgotPassword(SeeSight.Identity.Api.Contracts.ForgotPasswordRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:37:59 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api) - Validation state: Valid
+[23:37:59 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id"
+FROM users AS u
+WHERE u."Email" = @__normalizedEmail_0
+LIMIT 2
+[23:37:59 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Email" = @__normalizedEmail_0
+LIMIT 2
+[23:37:59 INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+INSERT INTO password_reset_tokens ("Id", "CreatedAt", "ExpiresAt", "TokenHash", "UsedAt", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+[23:37:59 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 14.8507ms.
+[23:37:59 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Api.Contracts.ForgotPasswordResponse'.
+[23:37:59 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api) in 15.6631ms
+[23:37:59 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api)'
+[23:37:59 INF] Request finished HTTP/1.1 POST http://localhost/auth/forgot-password - 200 null application/json; charset=utf-8 17.6822ms
+[23:37:59 INF] Request starting HTTP/1.1 POST http://localhost/auth/reset-password - application/json; charset=utf-8 87
+[23:37:59 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api)'
+[23:37:59 INF] Route matched with {action = "ResetPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(SeeSight.Identity.Api.Contracts.ResetPasswordRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:37:59 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api) - Validation state: Valid
+[23:37:59 INF] Executed DbCommand (2ms) [Parameters=[@__tokenHash_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT p."Id", p."CreatedAt", p."ExpiresAt", p."TokenHash", p."UsedAt", p."UserId"
+FROM password_reset_tokens AS p
+WHERE p."TokenHash" = @__tokenHash_0
+LIMIT 2
+[23:37:59 INF] Executed DbCommand (1ms) [Parameters=[@__resetToken_UserId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Id" = @__resetToken_UserId_0
+LIMIT 2
+[23:37:59 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) in 377.138ms
+[23:37:59 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:37:59 INF] Request finished HTTP/1.1 POST http://localhost/auth/login - 401 null application/problem+json 383.1508ms
+[23:37:59 INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p2='?', @p3='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE password_reset_tokens SET "UsedAt" = @p0
+WHERE "Id" = @p1;
+UPDATE users SET "PasswordHash" = @p2, "UpdatedAt" = @p3
+WHERE "Id" = @p4;
+[23:37:59 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 360.6974ms.
+[23:37:59 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 136
+[23:37:59 INF] Executing StatusCodeResult, setting HTTP status code 204
+[23:37:59 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api) in 362.5348ms
+[23:37:59 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api)'
+[23:37:59 INF] Request finished HTTP/1.1 POST http://localhost/auth/reset-password - 204 null null 363.9974ms
+[23:37:59 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:37:59 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:37:59 INF] Request starting HTTP/1.1 POST http://localhost/auth/login - application/json; charset=utf-8 92
+[23:37:59 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:37:59 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:37:59 INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Login(SeeSight.Identity.Api.Contracts.LoginRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:37:59 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) - Validation state: Valid
+[23:37:59 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:37:59 INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Email" = @__normalizedEmail_0
+LIMIT 2
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) in 347.4111ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/login - 401 null application/problem+json 349.2155ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/login - application/json; charset=utf-8 94
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Login(SeeSight.Identity.Api.Contracts.LoginRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Email" = @__normalizedEmail_0
+LIMIT 2
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO users ("Id", "CompanyId", "CreatedAt", "Email", "FirstName", "LastName", "MustChangePassword", "PasswordHash", "Role", "Status", "UpdatedAt")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 372.0361ms.
+[23:38:00 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 372.707ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 373.2764ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/login - application/json; charset=utf-8 92
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Login(SeeSight.Identity.Api.Contracts.LoginRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Email" = @__normalizedEmail_0
+LIMIT 2
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 229.3242ms.
+[23:38:00 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) in 229.6139ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/login - 200 null application/json; charset=utf-8 229.8622ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/refresh - application/json; charset=utf-8 35
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Refresh(SeeSight.Identity.Api.Contracts.RefreshRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__presentedHash_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."CreatedByIp", r."ExpiresAt", r."ReplacedByTokenId", r."RevokedAt", r."TokenHash", r."UserId"
+FROM refresh_tokens AS r
+WHERE r."TokenHash" = @__presentedHash_0
+LIMIT 2
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) in 5.8275ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/refresh - 401 null application/problem+json 7.3248ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 222.2029ms.
+[23:38:00 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) in 222.3758ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/login - 200 null application/json; charset=utf-8 222.5451ms
+[23:38:00 INF] Request starting HTTP/1.1 GET http://localhost/auth/me - null null
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Me", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Application.Users.UserDto]] Me(System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__request_UserId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Id" = @__request_UserId_0
+LIMIT 2
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.2492ms.
+[23:38:00 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Application.Users.UserDto'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api) in 4.4111ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 GET http://localhost/auth/me - 200 null application/json; charset=utf-8 5.9954ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/login - application/json; charset=utf-8 92
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Login(SeeSight.Identity.Api.Contracts.LoginRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Email" = @__normalizedEmail_0
+LIMIT 2
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) in 1.8526ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/login - 401 null application/problem+json 2.0805ms
+[23:38:00 INF] Request starting HTTP/1.1 GET http://localhost/health/live - null null
+[23:38:00 INF] Executing endpoint 'Health checks'
+[23:38:00 INF] Executed endpoint 'Health checks'
+[23:38:00 INF] Request finished HTTP/1.1 GET http://localhost/health/live - 200 null text/plain 1.5032ms
+[23:38:00 INF] Request starting HTTP/1.1 GET http://localhost/health/ready - null null
+[23:38:00 INF] Executing endpoint 'Health checks'
+[23:38:00 INF] Executed endpoint 'Health checks'
+[23:38:00 INF] Request finished HTTP/1.1 GET http://localhost/health/ready - 200 null text/plain 9.9071ms
+[23:38:00 INF] Request starting HTTP/1.1 GET http://localhost/auth/me - null null
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Me", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Application.Users.UserDto]] Me(System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.UnauthorizedResult in 0.0278ms.
+[23:38:00 INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api) in 2.3538ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Me (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 GET http://localhost/auth/me - 401 null application/problem+json; charset=utf-8 2.5397ms
+[23:38:00 INF] Request starting HTTP/1.1 GET http://localhost/.well-known/jwks.json - null null
+[23:38:00 INF] Executing endpoint 'HTTP: GET /.well-known/jwks.json'
+[23:38:00 INF] Writing value of type 'JsonWebKeySet' as Json.
+[23:38:00 INF] Executed endpoint 'HTTP: GET /.well-known/jwks.json'
+[23:38:00 INF] Request finished HTTP/1.1 GET http://localhost/.well-known/jwks.json - 200 null application/json; charset=utf-8 3.3432ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 129
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 2.0159ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 400 null application/problem+json; charset=utf-8 2.1545ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 84
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 4.4678ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 400 null application/problem+json 4.9011ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO users ("Id", "CompanyId", "CreatedAt", "Email", "FirstName", "LastName", "MustChangePassword", "PasswordHash", "Role", "Status", "UpdatedAt")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 223.6615ms.
+[23:38:00 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 224.0305ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 224.2575ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/refresh - application/json; charset=utf-8 62
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Refresh(SeeSight.Identity.Api.Contracts.RefreshRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__presentedHash_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."CreatedByIp", r."ExpiresAt", r."ReplacedByTokenId", r."RevokedAt", r."TokenHash", r."UserId"
+FROM refresh_tokens AS r
+WHERE r."TokenHash" = @__presentedHash_0
+LIMIT 2
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__presentedToken_UserId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT u."Id", u."CompanyId", u."CreatedAt", u."Email", u."FirstName", u."LastName", u."MustChangePassword", u."PasswordHash", u."Role", u."Status", u."UpdatedAt"
+FROM users AS u
+WHERE u."Id" = @__presentedToken_UserId_0
+LIMIT 2
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime), @p5='?', @p6='?' (DbType = DateTime), @p7='?' (DbType = Guid), @p8='?' (DbType = DateTime), @p9='?', @p10='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+UPDATE refresh_tokens SET "ReplacedByTokenId" = @p0, "RevokedAt" = @p1
+WHERE "Id" = @p2;
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.4913ms.
+[23:38:00 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) in 7.7037ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/refresh - 200 null application/json; charset=utf-8 7.8962ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/refresh - application/json; charset=utf-8 62
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Refresh(SeeSight.Identity.Api.Contracts.RefreshRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__presentedHash_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."CreatedByIp", r."ExpiresAt", r."ReplacedByTokenId", r."RevokedAt", r."TokenHash", r."UserId"
+FROM refresh_tokens AS r
+WHERE r."TokenHash" = @__presentedHash_0
+LIMIT 2
+[23:38:00 INF] Executed DbCommand (0ms) [Parameters=[@__presentedToken_UserId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT r."Id", r."CreatedAt", r."CreatedByIp", r."ExpiresAt", r."ReplacedByTokenId", r."RevokedAt", r."TokenHash", r."UserId"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__presentedToken_UserId_0 AND r."RevokedAt" IS NULL
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+UPDATE refresh_tokens SET "RevokedAt" = @p0
+WHERE "Id" = @p1;
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) in 9.3631ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/refresh - 401 null application/problem+json 9.5828ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/change-password - application/json; charset=utf-8 67
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangePassword(SeeSight.Identity.Api.Contracts.ChangePasswordRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.UnauthorizedResult in 0.2258ms.
+[23:38:00 INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api) in 1.0047ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/change-password - 401 null application/problem+json; charset=utf-8 2.1309ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:38:00 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO users ("Id", "CompanyId", "CreatedAt", "Email", "FirstName", "LastName", "MustChangePassword", "PasswordHash", "Role", "Status", "UpdatedAt")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+[23:38:00 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 223.389ms.
+[23:38:00 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 223.658ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 223.7976ms
+[23:38:00 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:00 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:00 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:00 INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:38:00 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 1.0114ms
+[23:38:00 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:00 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 409 null application/problem+json 1.1988ms
+[testcontainers.org 00:00:05.14] Delete Docker container 05e15bf721de
+[23:38:01 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO users ("Id", "CompanyId", "CreatedAt", "Email", "FirstName", "LastName", "MustChangePassword", "PasswordHash", "Role", "Status", "UpdatedAt")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 231.6154ms.
+[23:38:01 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 232.0651ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 232.2894ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u."Email" = @__normalizedEmail_0)
+[23:38:01 INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = DateTime), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?', @p17='?', @p18='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO refresh_tokens ("Id", "CreatedAt", "CreatedByIp", "ExpiresAt", "ReplacedByTokenId", "RevokedAt", "TokenHash", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+INSERT INTO users ("Id", "CompanyId", "CreatedAt", "Email", "FirstName", "LastName", "MustChangePassword", "PasswordHash", "Role", "Status", "UpdatedAt")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 227.254ms.
+[23:38:01 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 227.7688ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 228.075ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/change-password - application/json; charset=utf-8 68
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangePassword(SeeSight.Identity.Api.Contracts.ChangePasswordRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api) in 220.7119ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/change-password - 400 null application/problem+json 221.0114ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 221.4636ms.
+[23:38:01 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 221.8442ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 222.0492ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/logout - application/json; charset=utf-8 62
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(SeeSight.Identity.Api.Contracts.LogoutRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 5.789ms.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api) in 6.2447ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/logout - 204 null null 7.3984ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/refresh - application/json; charset=utf-8 62
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Refresh(SeeSight.Identity.Api.Contracts.RefreshRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) in 1.4642ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/refresh - 401 null application/problem+json 1.6398ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 228.4121ms.
+[23:38:01 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 228.7069ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 228.8206ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/refresh - application/json; charset=utf-8 62
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Refresh(SeeSight.Identity.Api.Contracts.RefreshRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.7385ms.
+[23:38:01 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) in 4.9015ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/refresh - 200 null application/json; charset=utf-8 5.0984ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/refresh - application/json; charset=utf-8 2
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Refresh(SeeSight.Identity.Api.Contracts.RefreshRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.UnauthorizedResult in 0.2495ms.
+[23:38:01 INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api) in 0.4232ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Refresh (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/refresh - 401 null application/problem+json; charset=utf-8 0.5483ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/reset-password - application/json; charset=utf-8 60
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "ResetPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(SeeSight.Identity.Api.Contracts.ResetPasswordRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api) in 1.1222ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ResetPassword (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/reset-password - 400 null application/problem+json 1.3301ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/forgot-password - application/json; charset=utf-8 65
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.ForgotPasswordResponse]] ForgotPassword(SeeSight.Identity.Api.Contracts.ForgotPasswordRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.8274ms.
+[23:38:01 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Api.Contracts.ForgotPasswordResponse'.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api) in 0.9864ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ForgotPassword (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/forgot-password - 200 null application/json; charset=utf-8 1.0954ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/logout - application/json; charset=utf-8 2
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(SeeSight.Identity.Api.Contracts.LogoutRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:01 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 0.105ms.
+[23:38:01 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api) in 0.172ms
+[23:38:01 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Logout (SeeSight.Identity.Api)'
+[23:38:01 INF] Request finished HTTP/1.1 POST http://localhost/auth/logout - 204 null null 0.3118ms
+[23:38:01 INF] Request starting HTTP/1.1 POST http://localhost/auth/register - application/json; charset=utf-8 92
+[23:38:01 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:01 INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Register(SeeSight.Identity.Api.Contracts.RegisterRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:01 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:02 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 220.0157ms.
+[23:38:02 INF] Executing CreatedAtActionResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:02 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api) in 220.277ms
+[23:38:02 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Register (SeeSight.Identity.Api)'
+[23:38:02 INF] Request finished HTTP/1.1 POST http://localhost/auth/register - 201 null application/json; charset=utf-8 220.3914ms
+[23:38:02 INF] Request starting HTTP/1.1 POST http://localhost/auth/change-password - application/json; charset=utf-8 67
+[23:38:02 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api)'
+[23:38:02 INF] Route matched with {action = "ChangePassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangePassword(SeeSight.Identity.Api.Contracts.ChangePasswordRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:02 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:02 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 439.3055ms.
+[23:38:02 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api) in 439.472ms
+[23:38:02 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.ChangePassword (SeeSight.Identity.Api)'
+[23:38:02 INF] Request finished HTTP/1.1 POST http://localhost/auth/change-password - 204 null null 439.6488ms
+[23:38:02 INF] Request starting HTTP/1.1 POST http://localhost/auth/login - application/json; charset=utf-8 94
+[23:38:02 INF] Executing endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:02 INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeeSight.Identity.Api.Contracts.AuthResponse]] Login(SeeSight.Identity.Api.Contracts.LoginRequest, System.Threading.CancellationToken) on controller SeeSight.Identity.Api.Controllers.AuthController (SeeSight.Identity.Api).
+[23:38:02 INF] Executing action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) - Validation state: Valid
+[23:38:02 INF] Executed action method SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 221.3462ms.
+[23:38:02 INF] Executing OkObjectResult, writing value of type 'SeeSight.Identity.Api.Contracts.AuthResponse'.
+[23:38:02 INF] Executed action SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api) in 221.5718ms
+[23:38:02 INF] Executed endpoint 'SeeSight.Identity.Api.Controllers.AuthController.Login (SeeSight.Identity.Api)'
+[23:38:02 INF] Request finished HTTP/1.1 POST http://localhost/auth/login - 200 null application/json; charset=utf-8 221.7235ms
+[testcontainers.org 00:00:07.15] Delete Docker container 4a4797cac978
+[xUnit.net 00:00:07.42]   Finished:    SeeSight.Identity.IntegrationTests
+</StdOut>
+    </Output>
+    <CollectorDataEntries>
+      <Collector agentName="Gigis-MacBook-Air" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="Gigis-MacBook-Air/coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

@@ -33,6 +33,26 @@ public sealed class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<Ex
         {
             await WriteProblemAsync(context, StatusCodes.Status401Unauthorized, "Unauthorized", ex.Message).ConfigureAwait(false);
         }
+        catch (InvalidRefreshTokenException ex)
+        {
+            await WriteProblemAsync(context, StatusCodes.Status401Unauthorized, "Unauthorized", ex.Message).ConfigureAwait(false);
+        }
+        catch (RefreshTokenReuseDetectedException ex)
+        {
+            await WriteProblemAsync(context, StatusCodes.Status401Unauthorized, "Unauthorized", ex.Message).ConfigureAwait(false);
+        }
+        catch (InvalidPasswordResetTokenException ex)
+        {
+            await WriteProblemAsync(context, StatusCodes.Status400BadRequest, "Bad Request", ex.Message).ConfigureAwait(false);
+        }
+        catch (CurrentPasswordIncorrectException ex)
+        {
+            await WriteProblemAsync(context, StatusCodes.Status400BadRequest, "Bad Request", ex.Message).ConfigureAwait(false);
+        }
+        catch (SamePasswordException ex)
+        {
+            await WriteProblemAsync(context, StatusCodes.Status400BadRequest, "Bad Request", ex.Message).ConfigureAwait(false);
+        }
         catch (Exception ex)
         {
             ExceptionHandlingMiddlewareLog.UnhandledException(logger, ex);
@@ -43,7 +63,6 @@ public sealed class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<Ex
 
     private static async Task WriteProblemAsync(HttpContext context, int statusCode, string title, string detail)
     {
-        context.Response.ContentType = "application/problem+json";
         context.Response.StatusCode = statusCode;
 
         var problem = new ProblemDetails
@@ -53,7 +72,7 @@ public sealed class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<Ex
             Detail = detail,
         };
 
-        await context.Response.WriteAsJsonAsync(problem).ConfigureAwait(false);
+        await context.Response.WriteAsJsonAsync(problem, options: null, contentType: "application/problem+json").ConfigureAwait(false);
     }
 }
 

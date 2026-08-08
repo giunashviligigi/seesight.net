@@ -26,6 +26,8 @@ public static class InfrastructureServiceCollectionExtensions
         services.AddSingleton<RsaSigningKeyProvider>();
         services.AddSingleton<IJwtIssuer, RsaJwtIssuer>();
         services.AddSingleton<IPasswordHasher, BCryptPasswordHasher>();
+        services.AddSingleton<ITokenHasher, Sha256TokenHasher>();
+        services.AddSingleton<IOpaqueTokenGenerator, SecureOpaqueTokenGenerator>();
 
         return services;
     }

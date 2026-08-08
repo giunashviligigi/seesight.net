@@ -8,7 +8,10 @@ namespace SeeSight.Identity.Application.Users;
 public sealed class LoginCommandHandler(
     IIdentityDbContext dbContext,
     IPasswordHasher passwordHasher,
-    IJwtIssuer jwtIssuer) : IRequestHandler<LoginCommand, AuthResult>
+    IJwtIssuer jwtIssuer,
+    IOpaqueTokenGenerator tokenGenerator,
+    ITokenHasher tokenHasher,
+    TimeProvider timeProvider) : IRequestHandler<LoginCommand, AuthResult>
 {
     public async Task<AuthResult> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
@@ -25,8 +28,18 @@ public sealed class LoginCommandHandler(
             throw new InvalidCredentialsException();
         }
 
+        var now = timeProvider.GetUtcNow();
         var accessToken = jwtIssuer.IssueAccessToken(user);
+        var (refreshTokenEntity, rawRefreshToken) = RefreshTokenIssuance.IssueAndTrack(
+            dbContext, tokenGenerator, tokenHasher, jwtIssuer, user.Id, request.IpAddress, now);
 
-        return new AuthResult(accessToken.Value, accessToken.ExpiresAt, UserDto.FromDomain(user));
+        await dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        return new AuthResult(
+            accessToken.Value,
+            accessToken.ExpiresAt,
+            rawRefreshToken,
+            refreshTokenEntity.ExpiresAt,
+            UserDto.FromDomain(user));
     }
 }

@@ -17,4 +17,6 @@ public sealed class JwtOptions
     public string Audience { get; set; } = "seesight";
 
     public int AccessTokenLifetimeMinutes { get; set; } = 15;
+
+    public int RefreshTokenLifetimeDays { get; set; } = 30;
 }

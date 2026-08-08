@@ -13,10 +13,21 @@ public sealed class LoginCommandHandlerTests : IDisposable
     private readonly FakeIdentityDbContext _dbContext = new();
     private readonly IPasswordHasher _passwordHasher = Substitute.For<IPasswordHasher>();
     private readonly IJwtIssuer _jwtIssuer = Substitute.For<IJwtIssuer>();
+    private readonly IOpaqueTokenGenerator _tokenGenerator = Substitute.For<IOpaqueTokenGenerator>();
+    private readonly ITokenHasher _tokenHasher = Substitute.For<ITokenHasher>();
+    private readonly TimeProvider _timeProvider = TimeProvider.System;
+
+    public LoginCommandHandlerTests()
+    {
+        _tokenGenerator.Generate().Returns("raw-refresh-token");
+        _tokenHasher.Hash(Arg.Any<string>()).Returns("hashed-refresh-token");
+        _jwtIssuer.ComputeRefreshTokenExpiry(Arg.Any<DateTimeOffset>()).Returns(DateTimeOffset.UtcNow.AddDays(30));
+    }
 
     public void Dispose() => _dbContext.Dispose();
 
-    private LoginCommandHandler CreateHandler() => new(_dbContext, _passwordHasher, _jwtIssuer);
+    private LoginCommandHandler CreateHandler() =>
+        new(_dbContext, _passwordHasher, _jwtIssuer, _tokenGenerator, _tokenHasher, _timeProvider);
 
     private async Task<User> SeedUserAsync(string email = "user@example.com", string passwordHash = "hashed-password", UserStatus status = UserStatus.Active)
     {
@@ -39,7 +50,7 @@ public sealed class LoginCommandHandlerTests : IDisposable
     }
 
     [Fact]
-    public async Task Handle_returns_an_access_token_for_valid_credentials()
+    public async Task Handle_returns_an_access_and_refresh_token_for_valid_credentials()
     {
         await SeedUserAsync("user@example.com", "hashed-password");
         _passwordHasher.Verify("correct-password", "hashed-password").Returns(true);
@@ -50,6 +61,8 @@ public sealed class LoginCommandHandlerTests : IDisposable
         var result = await handler.Handle(new LoginCommand("user@example.com", "correct-password"), CancellationToken.None);
 
         result.AccessToken.Should().Be("token-value");
+        result.AccessTokenExpiresAt.Should().Be(expectedExpiry);
+        result.RefreshToken.Should().Be("raw-refresh-token");
         result.User.Email.Should().Be("user@example.com");
     }
 

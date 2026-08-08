@@ -20,7 +20,10 @@ namespace SeeSight.Shared.Observability;
 /// </summary>
 public static class ObservabilityExtensions
 {
-    public static IHostApplicationBuilder AddSeeSightObservability(this IHostApplicationBuilder builder, string serviceName)
+    public static IHostApplicationBuilder AddSeeSightObservability(
+        this IHostApplicationBuilder builder,
+        string serviceName,
+        params string[] additionalMeterNames)
     {
         var otlpEndpoint = builder.Configuration["Observability:OtlpEndpoint"] ?? "http://localhost:4317";
 
@@ -30,10 +33,18 @@ public static class ObservabilityExtensions
                 .AddAspNetCoreInstrumentation()
                 .AddHttpClientInstrumentation()
                 .AddOtlpExporter(o => o.Endpoint = new Uri(otlpEndpoint)))
-            .WithMetrics(metrics => metrics
-                .AddAspNetCoreInstrumentation()
-                .AddHttpClientInstrumentation()
-                .AddOtlpExporter(o => o.Endpoint = new Uri(otlpEndpoint)));
+            .WithMetrics(metrics =>
+            {
+                metrics
+                    .AddAspNetCoreInstrumentation()
+                    .AddHttpClientInstrumentation()
+                    .AddOtlpExporter(o => o.Endpoint = new Uri(otlpEndpoint));
+
+                foreach (var meterName in additionalMeterNames)
+                {
+                    metrics.AddMeter(meterName);
+                }
+            });
 
         builder.Services.AddSerilog((services, loggerConfiguration) => loggerConfiguration
             .ReadFrom.Configuration(builder.Configuration)

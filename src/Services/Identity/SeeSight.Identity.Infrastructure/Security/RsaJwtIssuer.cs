@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SeeSight.Identity.Application.Abstractions;
 using SeeSight.Identity.Domain;
+using SeeSight.SharedKernel.Http;
 
 namespace SeeSight.Identity.Infrastructure.Security;
 
@@ -21,11 +22,15 @@ public sealed class RsaJwtIssuer(RsaSigningKeyProvider keyProvider, IOptions<Jwt
             new(JwtRegisteredClaimNames.Email, user.Email),
             new(ClaimTypes.Role, user.Role.ToString()),
             new(JwtRegisteredClaimNames.Jti, Guid.CreateVersion7().ToString()),
+            // Lets the Gateway enforce the MustChangePassword gate (docs/Authentication.md
+            // §4) without a database round-trip — consistent with the rest of the
+            // stateless-JWT-validation design.
+            new(SeeSightClaimTypes.MustChangePassword, user.MustChangePassword ? "true" : "false"),
         };
 
         if (user.CompanyId is { } companyId)
         {
-            claims.Add(new Claim("companyId", companyId.ToString()));
+            claims.Add(new Claim(SeeSightClaimTypes.CompanyId, companyId.ToString()));
         }
 
         var signingCredentials = new SigningCredentials(
@@ -43,4 +48,7 @@ public sealed class RsaJwtIssuer(RsaSigningKeyProvider keyProvider, IOptions<Jwt
         var tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
         return new AccessToken(tokenValue, expiresAt);
     }
+
+    public DateTimeOffset ComputeRefreshTokenExpiry(DateTimeOffset now) =>
+        now.AddDays(options.Value.RefreshTokenLifetimeDays);
 }

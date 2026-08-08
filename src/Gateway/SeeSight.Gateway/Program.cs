@@ -5,7 +5,9 @@ using Microsoft.IdentityModel.Tokens;
 using SeeSight.Gateway.Authentication;
 using SeeSight.Gateway.HealthChecks;
 using SeeSight.Gateway.Proxy;
+using SeeSight.Gateway.RateLimiting;
 using SeeSight.Shared.Observability;
+using StackExchange.Redis;
 using Yarp.ReverseProxy.Transforms.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,7 +27,7 @@ builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
     ["ReverseProxy:Clusters:identity:Destinations:destination1:Address"] = identityBaseUrl,
 });
 
-builder.AddSeeSightObservability("gateway");
+builder.AddSeeSightObservability("gateway", RateLimitMetrics.MeterName);
 
 builder.Services.AddOptions<IdentityServiceOptions>()
     .Bind(builder.Configuration.GetSection(IdentityServiceOptions.SectionName));
@@ -39,6 +41,20 @@ builder.Services.AddHttpClient(JwksCache.HttpClientName, (sp, client) =>
 });
 builder.Services.AddSingleton<JwksCache>();
 builder.Services.AddHostedService<JwksRefreshHostedService>();
+
+builder.Services.AddOptions<RateLimitOptions>()
+    .Bind(builder.Configuration.GetSection(RateLimitOptions.SectionName));
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var rateLimitOptions = sp.GetRequiredService<IOptions<RateLimitOptions>>().Value;
+    var redisOptions = ConfigurationOptions.Parse(rateLimitOptions.RedisConnectionString);
+    // Per ADR 0007/0008: a Redis outage — even at startup — must not take the
+    // Gateway down. AbortOnConnectFail = false means this call never throws
+    // even if Redis is completely unreachable; the multiplexer retries in the
+    // background and every rate-limit check fails open until it reconnects.
+    redisOptions.AbortOnConnectFail = false;
+    return ConnectionMultiplexer.Connect(redisOptions);
+});
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -110,9 +126,11 @@ builder.Services.AddHealthChecks()
 var app = builder.Build();
 
 app.UseSeeSightCorrelationId();
+app.UseMiddleware<RedisRateLimitMiddleware>();
 app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<MustChangePasswordMiddleware>();
 
 app.MapReverseProxy();
 

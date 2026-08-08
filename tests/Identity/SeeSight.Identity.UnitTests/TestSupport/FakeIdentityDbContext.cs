@@ -18,12 +18,28 @@ internal sealed class FakeIdentityDbContext()
 {
     public DbSet<User> Users => Set<User>();
 
+    public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
+
+    public DbSet<PasswordResetToken> PasswordResetTokens => Set<PasswordResetToken>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>(builder =>
         {
             builder.HasKey(u => u.Id);
             builder.HasIndex(u => u.Email).IsUnique();
+        });
+
+        modelBuilder.Entity<RefreshToken>(builder =>
+        {
+            builder.HasKey(t => t.Id);
+            builder.HasIndex(t => t.TokenHash).IsUnique();
+        });
+
+        modelBuilder.Entity<PasswordResetToken>(builder =>
+        {
+            builder.HasKey(t => t.Id);
+            builder.HasIndex(t => t.TokenHash).IsUnique();
         });
     }
 }

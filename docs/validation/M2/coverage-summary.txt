@@ -1,0 +1,23 @@
+M2 Coverage Summary (per-project, XPlat Code Coverage / cobertura)
+====================================================================
+
+Project                          Line Coverage      Lines Covered/Valid
+--------------------------------------------------------------------
+SeeSight.Identity.UnitTests      87.6%              346/395
+SeeSight.Identity.IntegrationTests 70.2%             828/1179
+SeeSight.Identity.ArchitectureTests 0.0%*            0/1179
+SeeSight.Gateway.Tests           18.3%*             79/432
+
+* ArchitectureTests uses reflection (NetArchTest) to inspect assembly
+  metadata — it never executes the business-logic bodies it checks, so
+  0% line coverage from this project is expected, not a gap.
+* Gateway.Tests line-rate is computed against the whole Gateway assembly
+  (YARP transforms, Program.cs startup wiring, health checks, etc.), most
+  of which is only exercised end-to-end via the containerized Docker
+  Compose stack (see README.md "Manual End-to-End Verification"), not by
+  this in-process unit-test project. The two new M2 middlewares
+  (MustChangePasswordMiddleware, RedisRateLimitMiddleware) that this
+  project specifically targets are fully covered by the 19 tests in it.
+
+Each figure is from an independent single-project coverage run (no merged
+solution-wide report — same convention as M1; see README.md Technical Debt).

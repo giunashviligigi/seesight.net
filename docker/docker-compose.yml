@@ -46,11 +46,14 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       IdentityService__BaseUrl: "http://identity:8080"
+      Gateway__RateLimit__RedisConnectionString: "redis:6379"
       Observability__OtlpEndpoint: "http://otel-collector:4317"
     ports:
       - "8080:8080"
     depends_on:
       identity:
+        condition: service_healthy
+      redis:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health/ready"]

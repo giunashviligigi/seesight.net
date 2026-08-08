@@ -14,6 +14,27 @@
         "Match": { "Path": "/auth/me", "Methods": [ "GET" ] },
         "AuthorizationPolicy": "Authenticated"
       },
+      "identity-refresh": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/refresh", "Methods": [ "POST" ] }
+      },
+      "identity-logout": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/logout", "Methods": [ "POST" ] }
+      },
+      "identity-forgot-password": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/forgot-password", "Methods": [ "POST" ] }
+      },
+      "identity-reset-password": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/reset-password", "Methods": [ "POST" ] }
+      },
+      "identity-change-password": {
+        "ClusterId": "identity",
+        "Match": { "Path": "/auth/change-password", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
       "identity-jwks": {
         "ClusterId": "identity",
         "Match": { "Path": "/.well-known/jwks.json", "Methods": [ "GET" ] }

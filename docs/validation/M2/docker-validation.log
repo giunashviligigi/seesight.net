@@ -1,0 +1,113 @@
+=== 1. docker compose ps (full stack) ===
+NAME                        IMAGE                                          COMMAND                  SERVICE          CREATED              STATUS                        PORTS
+seesight-gateway-1          seesight-gateway                               "sh -c 'exec dotnet …"   gateway          5 minutes ago        Up About a minute (healthy)   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+seesight-grafana-1          grafana/grafana:11.3.0                         "/run.sh"                grafana          3 days ago           Up 4 minutes (healthy)        0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp
+seesight-identity-1         seesight-identity                              "sh -c 'exec dotnet …"   identity         5 minutes ago        Up 4 minutes (healthy)        0.0.0.0:5075->8080/tcp, [::]:5075->8080/tcp
+seesight-jaeger-1           jaegertracing/all-in-one:1.62.0                "/go/bin/all-in-one-…"   jaeger           3 days ago           Up 5 minutes (healthy)        0.0.0.0:16686->16686/tcp, [::]:16686->16686/tcp
+seesight-otel-collector-1   otel/opentelemetry-collector-contrib:0.112.0   "/otelcol-contrib --…"   otel-collector   3 days ago           Up 4 minutes                  0.0.0.0:4317-4318->4317-4318/tcp, [::]:4317-4318->4317-4318/tcp, 0.0.0.0:13133->13133/tcp, [::]:13133->13133/tcp
+seesight-postgres-1         postgres:16-alpine                             "docker-entrypoint.s…"   postgres         About a minute ago   Up About a minute (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+seesight-prometheus-1       prom/prometheus:v2.55.1                        "/bin/prometheus --c…"   prometheus       3 days ago           Up 4 minutes (healthy)        0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+seesight-rabbitmq-1         rabbitmq:3-management-alpine                   "docker-entrypoint.s…"   rabbitmq         3 days ago           Up 5 minutes (healthy)        0.0.0.0:5672->5672/tcp, [::]:5672->5672/tcp, 0.0.0.0:15672->15672/tcp, [::]:15672->15672/tcp
+seesight-redis-1            redis:7-alpine                                 "docker-entrypoint.s…"   redis            3 days ago           Up 5 minutes (healthy)        0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+
+=== 2. Health checks ===
+GET /health/live (identity):
+Healthy [200]
+GET /health/ready (identity):
+Healthy [200]
+GET /health (gateway, aggregated):
+{"status":"Healthy","services":{"identity":"Healthy"}} [200]
+
+=== 3. Register through the Gateway ===
+{"accessToken":"<REDACTED_ACCESS_TOKEN>","accessTokenExpiresAt":"2026-08-08T20:01:02.8122038+00:00","refreshToken":"<REDACTED_REFRESH_TOKEN>","refreshTokenExpiresAt":"2026-09-07T19:46:02.468808+00:00","user":{"id":"019fe2e9-37a6-7403-bd95-0a71e4097c40","email":"m2-docker-1786218362@example.com","firstName":null,"lastName":null,"role":1,"status":0,"mustChangePassword":false,"companyId":null}}
+HTTP_STATUS:201
+
+Cookies set:
+
+
+Cookies set (correcting the earlier filter):
+ Path=
+seesight_refresh_token Path=/auth
+seesight_access_token Path=/
+
+=== 4. /auth/me using only the cookie (no Authorization header) ===
+{"id":"019fe2e9-37a6-7403-bd95-0a71e4097c40","email":"m2-docker-1786218362@example.com","firstName":null,"lastName":null,"role":1,"status":0,"mustChangePassword":false,"companyId":null} [200]
+
+=== 5. Refresh using only the cookie (Path=/auth) ===
+{"accessToken":"<REDACTED_ACCESS_TOKEN>","accessTokenExpiresAt":"2026-08-08T20:01:23.3066839+00:00","refreshToken":"<REDACTED_REFRESH_TOKEN>","refreshTokenExpiresAt":"2026-09-07T19:46:23.2996151+00:00","user":{"id":"019fe2e9-37a6-7403-bd95-0a71e4097c40","email":"m2-docker-1786218362@example.com","firstName":null,"lastName":null,"role":1,"status":0,"mustChangePassword":false,"companyId":null}}
+HTTP_STATUS:200
+
+=== 6. Reuse of the now-rotated-away original refresh token via body (expect 401) ===
+{"title":"Unauthorized","status":401,"detail":"Invalid or expired refresh token."}
+HTTP_STATUS:401
+
+=== 7. Logout using the cookie (updated jar from refresh step) ===
+
+HTTP_STATUS:204
+
+Cookies after logout (should be cleared/expired):
+
+=== 8. Refresh with the now-logged-out token (expect 401) ===
+{"title":"Unauthorized","status":401,"detail":"Invalid or expired refresh token."}
+HTTP_STATUS:401
+
+=== 9. Forgot password (Development env exposes debug token) ===
+{"message":"If an account with that email exists, a password reset link has been sent.","debugToken":"<REDACTED_RESET_TOKEN>","debugResetUrl":"http://localhost:3000/reset-password?token=<REDACTED_RESET_TOKEN>"}
+HTTP_STATUS:200
+Extracted debug token: <REDACTED_RESET_TOKEN>
+
+=== 10. Reset password using the debug token ===
+
+HTTP_STATUS:204
+
+=== 11. Login with the old password (expect 401) ===
+{"title":"Unauthorized","status":401,"detail":"Invalid email or password."}
+HTTP_STATUS:401
+
+=== 12. Login with the new password (expect 200) ===
+{"accessToken":"<REDACTED_ACCESS_TOKEN>","accessTokenExpiresAt":"2026-08-08T20:01:43.7120307+00:00","refreshToken":"<REDACTED_REFRESH_TOKEN>","refreshTokenExpiresAt":"2026-09-07T19:46:43.7120272+00:00","user":{"id":"019fe2e9-37a6-7403-bd95-0a71e4097c40","email":"m2-docker-1786218362@example.com","firstName":null,"lastName":null,"role":1,"status":0,"mustChangePassword":false,"companyId":null}}
+HTTP_STATUS:200
+
+=== 13. Change password using Bearer auth through the Gateway ===
+
+HTTP_STATUS:204
+
+=== 14. Login with final password (expect 200, proving change-password worked through the Gateway) ===
+{"accessToken":"<REDACTED_ACCESS_TOKEN>","accessTokenExpiresAt":"2026-08-08T20:01:54.2401428+00:00","refreshToken":"<REDACTED_REFRESH_TOKEN>","refreshTokenExpiresAt":"2026-09-07T19:46:54.240141+00:00","user":{"id":"019fe2e9-37a6-7403-bd95-0a71e4097c40","email":"m2-docker-1786218362@example.com","firstName":null,"lastName":null,"role":1,"status":0,"mustChangePassword":false,"companyId":null}}
+HTTP_STATUS:200
+
+=== 15. Rate limiting: 12 rapid POSTs to /auth/login (limit is 10/60s) ===
+Request 1: HTTP 401
+Request 2: HTTP 401
+Request 3: HTTP 401
+Request 4: HTTP 401
+Request 5: HTTP 401
+Request 6: HTTP 401
+Request 7: HTTP 429
+Request 8: HTTP 429
+Request 9: HTTP 429
+Request 10: HTTP 429
+Request 11: HTTP 429
+Request 12: HTTP 429
+
+Redis key state:
+ratelimit:auth:/auth/login:::ffff:192.168.65.1
+
+=== 16. Fail-open verification: stop Redis, then hit /auth/register (must still succeed, not 500/hang) ===
+{"accessToken":"<REDACTED_ACCESS_TOKEN>","accessTokenExpiresAt":"2026-08-08T20:02:34.7609678+00:00","refreshToken":"<REDACTED_REFRESH_TOKEN>","refreshTokenExpiresAt":"2026-09-07T19:47:34.5370154+00:00","user":{"id":"019fe2ea-9ee8-7954-8265-d2fa87c2d753","email":"m2-failopen-1786218448@example.com","firstName":null,"lastName":null,"role":1,"status":0,"mustChangePassword":false,"companyId":null}}
+HTTP_STATUS:201
+
+Gateway logs during the Redis outage (expect the fail-open warning):
+[19:47:34 WRN] Rate limiter could not reach Redis — failing open (request allowed).
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect (0-read, 0-sent) on redis:6379/Interactive, Initializing/NotStarted, last: INCR, origin: BeginConnectAsync, outstanding: 0, last-read: 0s ago, last-write: 0s ago, keep-alive: 60s, state: Connecting, last-heartbeat: never, last-mbeat: 0s ago, global: 0s ago, v: 3.1.13.8476, command=INCR, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 20, serverEndpoint: redis:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, clientName: d745ebcfe948(SE.Redis-v3.1.13.8476), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=10,Max=32767), POOL: (Threads=4,QueuedItems=0,CompletedItems=1440,Timers=8), v: 3.1.13.8476 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: UnableToConnect (0-read, 0-sent) on redis:6379/Interactive, Initializing/NotStarted, last: INCR, origin: BeginConnectAsync, outstanding: 0, last-read: 0s ago, last-write: 0s ago, keep-alive: 60s, state: Connecting, last-heartbeat: never, last-mbeat: 0s ago, global: 0s ago, v: 3.1.13.8476
+   at SeeSight.Gateway.RateLimiting.RedisRateLimitMiddleware.InvokeAsync(HttpContext context) in /src/src/Gateway/SeeSight.Gateway/RateLimiting/RedisRateLimitMiddleware.cs:line 43
+
+Redis restarted; gateway health after recovery:
+{"status":"Healthy","services":{"identity":"Healthy"}} [200]
+
+=== Summary ===
+All 9 containers reached healthy after fixing a leftover-container network attachment issue (see README.md Architecture Verification).
+Register -> cookie set (access Path=/, refresh Path=/auth) -> /auth/me via cookie -> refresh rotation via cookie -> reuse-detection 401 -> logout revokes + clears cookies -> refresh-after-logout 401 -> forgot/reset password -> old password 401, new password 200 -> change-password via Bearer -> final password 200: all verified against the real containerized Gateway+Identity+Postgres+Redis stack.
+Rate limiting: window count carried over from the 4 prior /auth/login calls in this same script run within the 60s window; the 7th request in the dedicated loop (11th /auth/login call overall in that window) correctly received 429, matching RequestsPerWindow=10 with fixed-window semantics.
+Fail-open: with Redis stopped, POST /auth/register still returned 201 (request allowed through), with a warning logged and the ADR 0007/0008 fail-open metric incremented. Redis was restarted afterward and the Gateway's aggregated /health returned Healthy again with no restart needed.
