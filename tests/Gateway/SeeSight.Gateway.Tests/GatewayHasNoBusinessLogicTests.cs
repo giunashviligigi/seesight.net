@@ -17,6 +17,10 @@ public sealed class GatewayHasNoBusinessLogicTests
     [InlineData("SeeSight.Identity.Application")]
     [InlineData("SeeSight.Identity.Infrastructure")]
     [InlineData("SeeSight.Identity.Api")]
+    [InlineData("SeeSight.Tenant.Domain")]
+    [InlineData("SeeSight.Tenant.Application")]
+    [InlineData("SeeSight.Tenant.Infrastructure")]
+    [InlineData("SeeSight.Tenant.Api")]
     public void Gateway_does_not_depend_on_any_service_business_logic(string forbiddenAssembly)
     {
         var result = Types.InAssembly(GatewayAssembly)

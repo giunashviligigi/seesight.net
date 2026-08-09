@@ -22,15 +22,19 @@ builder.Configuration.AddJsonFile("yarp.config.json", optional: false, reloadOnC
 // exactly the class of bug this fixes: the two were previously configured
 // independently, and only the JwksCache one was ever overridden for Docker.
 var identityBaseUrl = builder.Configuration[$"{IdentityServiceOptions.SectionName}:BaseUrl"] ?? "http://localhost:5075";
+var tenantBaseUrl = builder.Configuration[$"{TenantServiceOptions.SectionName}:BaseUrl"] ?? "http://localhost:5076";
 builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
 {
     ["ReverseProxy:Clusters:identity:Destinations:destination1:Address"] = identityBaseUrl,
+    ["ReverseProxy:Clusters:tenant:Destinations:destination1:Address"] = tenantBaseUrl,
 });
 
 builder.AddSeeSightObservability("gateway", RateLimitMetrics.MeterName);
 
 builder.Services.AddOptions<IdentityServiceOptions>()
     .Bind(builder.Configuration.GetSection(IdentityServiceOptions.SectionName));
+builder.Services.AddOptions<TenantServiceOptions>()
+    .Bind(builder.Configuration.GetSection(TenantServiceOptions.SectionName));
 builder.Services.AddOptions<AuthCookieOptions>()
     .Bind(builder.Configuration.GetSection(AuthCookieOptions.SectionName));
 
@@ -138,25 +142,42 @@ app.MapHealthChecks("/health/live", new HealthCheckOptions { Predicate = _ => fa
 app.MapHealthChecks("/health/ready", new HealthCheckOptions { Predicate = check => check.Tags.Contains("ready") });
 
 // Aggregated health — pure convenience fan-out, no business logic (docs/Microservices.md §1).
-app.MapGet("/health", async (IHttpClientFactory httpClientFactory, IOptions<IdentityServiceOptions> identityOptions, CancellationToken cancellationToken) =>
+app.MapGet("/health", async (
+    IHttpClientFactory httpClientFactory,
+    IOptions<IdentityServiceOptions> identityOptions,
+    IOptions<TenantServiceOptions> tenantOptions,
+    CancellationToken cancellationToken) =>
 {
-    var client = httpClientFactory.CreateClient();
-    client.BaseAddress = new Uri(identityOptions.Value.BaseUrl);
+    async Task<bool> IsHealthyAsync(string baseUrl)
+    {
+        var client = httpClientFactory.CreateClient();
+        client.BaseAddress = new Uri(baseUrl);
+        try
+        {
+            var response = await client.GetAsync("/health/ready", cancellationToken).ConfigureAwait(false);
+            return response.IsSuccessStatusCode;
+        }
+        catch (HttpRequestException)
+        {
+            return false;
+        }
+    }
 
-    bool identityHealthy;
-    try
-    {
-        var response = await client.GetAsync("/health/ready", cancellationToken).ConfigureAwait(false);
-        identityHealthy = response.IsSuccessStatusCode;
-    }
-    catch (HttpRequestException)
-    {
-        identityHealthy = false;
-    }
+    var identityHealthy = await IsHealthyAsync(identityOptions.Value.BaseUrl).ConfigureAwait(false);
+    var tenantHealthy = await IsHealthyAsync(tenantOptions.Value.BaseUrl).ConfigureAwait(false);
+    var allHealthy = identityHealthy && tenantHealthy;
 
     return Results.Json(
-        new { status = identityHealthy ? "Healthy" : "Unhealthy", services = new { identity = identityHealthy ? "Healthy" : "Unhealthy" } },
-        statusCode: identityHealthy ? 200 : 503);
+        new
+        {
+            status = allHealthy ? "Healthy" : "Unhealthy",
+            services = new
+            {
+                identity = identityHealthy ? "Healthy" : "Unhealthy",
+                tenant = tenantHealthy ? "Healthy" : "Unhealthy",
+            },
+        },
+        statusCode: allHealthy ? 200 : 503);
 });
 
 app.Run();

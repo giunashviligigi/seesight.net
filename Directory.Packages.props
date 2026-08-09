@@ -39,6 +39,15 @@
     <!-- Redis-backed rate limiting — see ADR 0008 -->
     <PackageVersion Include="StackExchange.Redis" Version="3.1.13" />
 
+    <!--
+      Tenant Service (M3): IHttpClientFactory/typed HttpClient for the one
+      synchronous service-to-service edge (Tenant -> Identity, per
+      docs/TenantArchitecture.md §6/docs/ProjectReferenceDiagram.md §6) — a
+      plain class library (Infrastructure) needs this explicitly; Api/Gateway
+      projects already get it for free via the ASP.NET Core FrameworkReference.
+    -->
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.18" />
+
     <!-- OpenAPI (native .NET 9 support — Architecture.md's Swagger/OpenAPI aggregation) -->
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.18" />
 

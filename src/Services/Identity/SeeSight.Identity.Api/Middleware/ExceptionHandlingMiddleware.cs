@@ -53,6 +53,10 @@ public sealed class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<Ex
         {
             await WriteProblemAsync(context, StatusCodes.Status400BadRequest, "Bad Request", ex.Message).ConfigureAwait(false);
         }
+        catch (UserNotFoundException ex)
+        {
+            await WriteProblemAsync(context, StatusCodes.Status404NotFound, "Not Found", ex.Message).ConfigureAwait(false);
+        }
         catch (Exception ex)
         {
             ExceptionHandlingMiddlewareLog.UnhandledException(logger, ex);

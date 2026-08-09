@@ -76,6 +76,11 @@ dotnet_style_prefer_auto_properties = true:suggestion
 # doesn't need a manual BOM-strip step to pass `dotnet format --verify-no-changes`.
 [**/Migrations/*.cs]
 charset = utf-8-bom
+# CA1861 (prefer static readonly array over a literal array argument) fires on
+# every composite-index/column-list call EF Core's own migration generator
+# writes (e.g. `columns: new[] { "CompanyId", "Name" }`) — generated code we
+# never hand-edit, so the warning has no actionable fix here.
+dotnet_diagnostic.CA1861.severity = none
 
 [*.{yml,yaml,json}]
 indent_size = 2

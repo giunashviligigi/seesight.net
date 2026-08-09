@@ -6,6 +6,7 @@ using SeeSight.Identity.Application;
 using SeeSight.Identity.Infrastructure;
 using SeeSight.Identity.Infrastructure.Security;
 using SeeSight.SharedKernel.Http;
+using SeeSight.SharedKernel.InternalAuth;
 using SeeSight.Shared.Observability;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.AddSeeSightObservability("identity");
 builder.Services.AddIdentityApplication();
 builder.Services.AddIdentityInfrastructure(builder.Configuration);
 builder.Services.AddCurrentUserContext();
+builder.Services.AddInternalServiceTokenValidation(builder.Configuration);
 
 builder.Services
     .AddControllers()
@@ -35,6 +37,7 @@ var app = builder.Build();
 
 app.UseSeeSightCorrelationId();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<InternalServiceTokenMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SeeSight.Tenant.Application\SeeSight.Tenant.Application.csproj" />
+    <ProjectReference Include="..\SeeSight.Tenant.Domain\SeeSight.Tenant.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SeeSight.SharedKernel\SeeSight.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SeeSight.Shared.Common\SeeSight.Shared.Common.csproj" />
+  </ItemGroup>
+
+</Project>

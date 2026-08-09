@@ -14,6 +14,8 @@ namespace SeeSight.Identity.IntegrationTests;
 /// </summary>
 public sealed class IdentityApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
+    public const string TestInternalServiceToken = "integration-test-internal-service-token";
+
     private readonly PostgreSqlContainer _postgres = new PostgreSqlBuilder("postgres:16-alpine")
         .WithDatabase("identity")
         .WithUsername("seesight")
@@ -43,6 +45,7 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>, IAsyncL
             config.AddInMemoryCollection(new Dictionary<string, string?>
             {
                 ["ConnectionStrings:IdentityDb"] = _postgres.GetConnectionString(),
+                ["Internal:ServiceToken"] = TestInternalServiceToken,
             });
         });
     }

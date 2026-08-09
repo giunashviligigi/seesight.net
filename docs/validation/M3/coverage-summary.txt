@@ -1,0 +1,38 @@
+M3 Coverage Summary (per-project, XPlat Code Coverage / cobertura)
+====================================================================
+
+Project                          Line Coverage      Lines Covered/Valid
+--------------------------------------------------------------------
+SeeSight.Identity.UnitTests        81.0%            549/678
+SeeSight.Identity.IntegrationTests 91.6%             1445/1578
+SeeSight.Identity.ArchitectureTests 0.0%*            0/1578
+SeeSight.Tenant.UnitTests          40.5%             380/938
+SeeSight.Tenant.IntegrationTests   82.5%             1705/2067
+SeeSight.Tenant.ArchitectureTests  0.0%*             0/2067
+SeeSight.Gateway.Tests             15.8%*            94/595
+
+* ArchitectureTests uses reflection (NetArchTest) to inspect assembly
+  metadata — it never executes the business-logic bodies it checks, so
+  0% line coverage from this project is expected, not a gap (same
+  convention as M1/M2).
+* Gateway.Tests line-rate is computed against the whole Gateway assembly
+  (YARP transforms, Program.cs startup wiring, health checks, etc.), most
+  of which is only exercised end-to-end via the containerized Docker
+  Compose stack (see README.md "Manual End-to-End Verification"), not by
+  this in-process unit-test project. The Gateway changes specific to M3
+  (Tenant Service route wiring, the aggregated /health fan-out, and
+  InternalRoutesNotExposedTests) are fully covered by the tests added to
+  this project.
+* SeeSight.Tenant.UnitTests line-rate (40.5%) is lower than
+  SeeSight.Identity.UnitTests because Tenant.UnitTests only unit-tests the
+  Domain and Application layers in isolation (with fakes) — the
+  Infrastructure layer (EF Core configuration, the tenant query filters
+  themselves, the IdentityServiceClient HTTP mapping) is deliberately
+  exercised by SeeSight.Tenant.IntegrationTests instead (82.5%), against a
+  real Postgres via Testcontainers, since that is the only way to prove
+  the EF Core query filter behavior end-to-end (see README.md "Security /
+  Tenant-Isolation Verification").
+
+Each figure is from an independent single-project coverage run (no merged
+solution-wide report — same convention as M1/M2; see README.md Technical
+Debt).

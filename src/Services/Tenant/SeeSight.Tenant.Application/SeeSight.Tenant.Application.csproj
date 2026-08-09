@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <!-- Microsoft.EntityFrameworkCore only (not Npgsql, not .Design) — same
+         Dependency Inversion pattern as Identity Service: ITenantDbContext is
+         defined here, implemented by the real EF Core DbContext in
+         Infrastructure (docs/Microservices.md §8). -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SeeSight.Tenant.Domain\SeeSight.Tenant.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SeeSight.SharedKernel\SeeSight.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SeeSight.Shared.Common\SeeSight.Shared.Common.csproj" />
+  </ItemGroup>
+
+</Project>

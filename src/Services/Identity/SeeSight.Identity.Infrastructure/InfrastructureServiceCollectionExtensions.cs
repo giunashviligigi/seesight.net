@@ -12,10 +12,19 @@ public static class InfrastructureServiceCollectionExtensions
 {
     public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("IdentityDb")
-            ?? throw new InvalidOperationException("Connection string 'IdentityDb' is required.");
-
-        services.AddDbContext<IdentityDbContext>(options => options.UseNpgsql(connectionString));
+        // Resolved lazily, from IConfiguration in the *built* container, not
+        // captured eagerly here — WebApplicationFactory-based integration
+        // tests add their Testcontainers connection string via a deferred
+        // configuration source that isn't merged into `configuration` until
+        // the host finishes building, which happens after this method runs.
+        // Eagerly reading (and closing over) the connection string here would
+        // silently bake in the pre-override value.
+        services.AddDbContext<IdentityDbContext>((serviceProvider, options) =>
+        {
+            var connectionString = serviceProvider.GetRequiredService<IConfiguration>().GetConnectionString("IdentityDb")
+                ?? throw new InvalidOperationException("Connection string 'IdentityDb' is required.");
+            options.UseNpgsql(connectionString);
+        });
         services.AddScoped<IIdentityDbContext>(sp => sp.GetRequiredService<IdentityDbContext>());
 
         services.AddSingleton<IValidateOptions<JwtOptions>, JwtOptionsValidator>();

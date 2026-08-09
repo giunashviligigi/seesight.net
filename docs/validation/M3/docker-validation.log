@@ -1,0 +1,666 @@
+ Image seesight-identity Building 
+ Image seesight-tenant Building 
+ Image seesight-gateway Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.82kB done
+#1 DONE 0.0s
+
+#2 [gateway internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.39kB done
+#2 DONE 0.0s
+
+#3 [identity] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#3 ERROR: DeadlineExceeded: context deadline exceeded
+------
+ > [identity] resolve image config for docker-image://docker.io/docker/dockerfile:1:
+------
+Dockerfile:1
+
+--------------------
+
+   1 | >>> # syntax=docker/dockerfile:1
+
+   2 |     #
+
+   3 |     # One shared, parameterized Dockerfile for every SeeSight .NET service — per
+
+--------------------
+
+target tenant: failed to solve: DeadlineExceeded: context deadline exceeded
+
+
+
+View build details: docker-desktop://dashboard/build/default/default/j0oglrrapx4hjfk3dj36zmjif
+
+ Image seesight-tenant Building 
+ Image seesight-identity Building 
+ Image seesight-gateway Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.82kB done
+#1 DONE 0.0s
+
+#2 [tenant internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.39kB done
+#2 DONE 0.0s
+
+#3 [gateway] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#3 ...
+
+#4 [auth] docker/dockerfile:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [gateway] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#3 DONE 57.8s
+
+#5 [gateway] docker-image://docker.io/docker/dockerfile:1@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89
+#5 resolve docker.io/docker/dockerfile:1@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89 0.0s done
+#5 CACHED
+
+#6 [tenant internal] load metadata for mcr.microsoft.com/dotnet/sdk:9.0
+#6 DONE 0.6s
+
+#7 [identity internal] load metadata for mcr.microsoft.com/dotnet/aspnet:9.0
+#7 DONE 0.6s
+
+#8 [identity internal] load .dockerignore
+#8 transferring context: 119B 0.1s done
+#8 DONE 0.1s
+
+#9 [identity build 1/5] FROM mcr.microsoft.com/dotnet/sdk:9.0@sha256:2205fd3a7cf5e422c58398a9968aa8b5041fdbb47c76574fe631082e4cbfa2b8
+#9 resolve mcr.microsoft.com/dotnet/sdk:9.0@sha256:2205fd3a7cf5e422c58398a9968aa8b5041fdbb47c76574fe631082e4cbfa2b8 done
+#9 DONE 0.0s
+
+#10 [identity runtime 1/4] FROM mcr.microsoft.com/dotnet/aspnet:9.0@sha256:93203a3c2a2e1745e8cbb547ddebcf1739870d38abbcf1af1f7cb2915fde7b88
+#10 resolve mcr.microsoft.com/dotnet/aspnet:9.0@sha256:93203a3c2a2e1745e8cbb547ddebcf1739870d38abbcf1af1f7cb2915fde7b88 done
+#10 CACHED
+
+#11 [tenant internal] load build context
+#11 transferring context: 374.41kB 0.0s done
+#11 transferring context: 374.41kB 0.0s done
+#11 DONE 0.0s
+
+#12 [tenant build 2/5] WORKDIR /src
+#12 CACHED
+
+#13 [tenant build 3/5] COPY . .
+#13 DONE 0.0s
+
+#14 [tenant build 4/5] RUN dotnet restore "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj"
+#14 0.659   Determining projects to restore...
+#14 1.367   Restored /src/src/Shared/SeeSight.Shared.Common/SeeSight.Shared.Common.csproj (in 49 ms).
+#14 1.367   Restored /src/src/Shared/SeeSight.SharedKernel/SeeSight.SharedKernel.csproj (in 50 ms).
+#14 1.367   Restored /src/src/Services/Tenant/SeeSight.Tenant.Domain/SeeSight.Tenant.Domain.csproj (in 54 ms).
+#14 ...
+
+#15 [tenant runtime 2/4] RUN apt-get update     && apt-get install -y --no-install-recommends curl     && rm -rf /var/lib/apt/lists/*
+#15 0.472 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#15 0.697 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#15 0.784 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#15 0.895 Get:4 http://deb.debian.org/debian bookworm/main arm64 Packages [8689 kB]
+#15 ...
+
+#16 [gateway build 4/5] RUN dotnet restore "src/Gateway/SeeSight.Gateway/SeeSight.Gateway.csproj"
+#16 0.659   Determining projects to restore...
+#16 1.294   Restored /src/src/Shared/SeeSight.SharedKernel/SeeSight.SharedKernel.csproj (in 41 ms).
+#16 ...
+
+#17 [identity build 4/5] RUN dotnet restore "src/Services/Identity/SeeSight.Identity.Api/SeeSight.Identity.Api.csproj"
+#17 0.659   Determining projects to restore...
+#17 1.387   Restored /src/src/Shared/SeeSight.SharedKernel/SeeSight.SharedKernel.csproj (in 52 ms).
+#17 1.387   Restored /src/src/Shared/SeeSight.Shared.Common/SeeSight.Shared.Common.csproj (in 52 ms).
+#17 1.387   Restored /src/src/Services/Identity/SeeSight.Identity.Domain/SeeSight.Identity.Domain.csproj (in 53 ms).
+#17 ...
+
+#15 [tenant runtime 2/4] RUN apt-get update     && apt-get install -y --no-install-recommends curl     && rm -rf /var/lib/apt/lists/*
+#15 41.68 Get:5 http://deb.debian.org/debian bookworm-updates/main arm64 Packages [6936 B]
+#15 44.61 Get:6 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages [323 kB]
+#15 ...
+
+#17 [identity build 4/5] RUN dotnet restore "src/Services/Identity/SeeSight.Identity.Api/SeeSight.Identity.Api.csproj"
+#17 73.50   Restored /src/src/Services/Identity/SeeSight.Identity.Application/SeeSight.Identity.Application.csproj (in 1.2 min).
+#17 ...
+
+#15 [tenant runtime 2/4] RUN apt-get update     && apt-get install -y --no-install-recommends curl     && rm -rf /var/lib/apt/lists/*
+#15 77.84 Fetched 9261 kB in 1min 18s (119 kB/s)
+#15 77.84 Reading package lists...
+#15 78.06 Reading package lists...
+#15 78.26 Building dependency tree...
+#15 78.31 Reading state information...
+#15 78.37 The following additional packages will be installed:
+#15 78.37   libbrotli1 libcurl4 libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3
+#15 78.37   libkrb5support0 libldap-2.5-0 libnghttp2-14 libpsl5 librtmp1 libsasl2-2
+#15 78.37   libsasl2-modules-db libssh2-1
+#15 78.37 Suggested packages:
+#15 78.37   krb5-doc krb5-user
+#15 78.37 Recommended packages:
+#15 78.37   krb5-locales libldap-common publicsuffix libsasl2-modules
+#15 78.42 The following NEW packages will be installed:
+#15 78.42   curl libbrotli1 libcurl4 libgssapi-krb5-2 libk5crypto3 libkeyutils1
+#15 78.42   libkrb5-3 libkrb5support0 libldap-2.5-0 libnghttp2-14 libpsl5 librtmp1
+#15 78.42   libsasl2-2 libsasl2-modules-db libssh2-1
+#15 78.82 0 upgraded, 15 newly installed, 0 to remove and 0 not upgraded.
+#15 78.82 Need to get 2116 kB of archives.
+#15 78.82 After this operation, 6177 kB of additional disk space will be used.
+#15 78.82 Get:1 http://deb.debian.org/debian bookworm/main arm64 libbrotli1 arm64 1.0.9-2+b6 [269 kB]
+#15 80.07 Get:2 http://deb.debian.org/debian bookworm/main arm64 libkrb5support0 arm64 1.20.1-2+deb12u5 [32.6 kB]
+#15 80.24 Get:3 http://deb.debian.org/debian bookworm/main arm64 libk5crypto3 arm64 1.20.1-2+deb12u5 [79.9 kB]
+#15 80.40 Get:4 http://deb.debian.org/debian bookworm/main arm64 libkeyutils1 arm64 1.6.3-2 [8844 B]
+#15 80.43 Get:5 http://deb.debian.org/debian bookworm/main arm64 libkrb5-3 arm64 1.20.1-2+deb12u5 [316 kB]
+#15 81.45 Get:6 http://deb.debian.org/debian bookworm/main arm64 libgssapi-krb5-2 arm64 1.20.1-2+deb12u5 [124 kB]
+#15 81.52 Get:7 http://deb.debian.org/debian bookworm/main arm64 libsasl2-modules-db arm64 2.1.28+dfsg-10 [20.8 kB]
+#15 81.53 Get:8 http://deb.debian.org/debian bookworm/main arm64 libsasl2-2 arm64 2.1.28+dfsg-10 [58.0 kB]
+#15 81.95 Get:9 http://deb.debian.org/debian bookworm/main arm64 libldap-2.5-0 arm64 2.5.13+dfsg-5 [171 kB]
+#15 82.02 Get:10 http://deb.debian.org/debian bookworm/main arm64 libnghttp2-14 arm64 1.52.0-1+deb12u3 [69.0 kB]
+#15 82.30 Get:11 http://deb.debian.org/debian bookworm/main arm64 libpsl5 arm64 0.21.2-1 [58.6 kB]
+#15 82.54 Get:12 http://deb.debian.org/debian bookworm/main arm64 librtmp1 arm64 2.4+20151223.gitfa8646d.1-2+b2 [59.4 kB]
+#15 82.66 Get:13 http://deb.debian.org/debian bookworm/main arm64 libssh2-1 arm64 1.10.0-3+b1 [172 kB]
+#15 82.90 Get:14 http://deb.debian.org/debian bookworm/main arm64 libcurl4 arm64 7.88.1-10+deb12u15 [367 kB]
+#15 83.22 Get:15 http://deb.debian.org/debian bookworm/main arm64 curl arm64 7.88.1-10+deb12u15 [310 kB]
+#15 83.46 debconf: delaying package configuration, since apt-utils is not installed
+#15 83.47 Fetched 2116 kB in 5s (428 kB/s)
+#15 83.48 Selecting previously unselected package libbrotli1:arm64.
+#15 83.48 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6595 files and directories currently installed.)
+#15 83.49 Preparing to unpack .../00-libbrotli1_1.0.9-2+b6_arm64.deb ...
+#15 83.49 Unpacking libbrotli1:arm64 (1.0.9-2+b6) ...
+#15 83.51 Selecting previously unselected package libkrb5support0:arm64.
+#15 83.51 Preparing to unpack .../01-libkrb5support0_1.20.1-2+deb12u5_arm64.deb ...
+#15 83.51 Unpacking libkrb5support0:arm64 (1.20.1-2+deb12u5) ...
+#15 83.52 Selecting previously unselected package libk5crypto3:arm64.
+#15 83.52 Preparing to unpack .../02-libk5crypto3_1.20.1-2+deb12u5_arm64.deb ...
+#15 83.52 Unpacking libk5crypto3:arm64 (1.20.1-2+deb12u5) ...
+#15 83.53 Selecting previously unselected package libkeyutils1:arm64.
+#15 83.53 Preparing to unpack .../03-libkeyutils1_1.6.3-2_arm64.deb ...
+#15 83.53 Unpacking libkeyutils1:arm64 (1.6.3-2) ...
+#15 83.54 Selecting previously unselected package libkrb5-3:arm64.
+#15 83.54 Preparing to unpack .../04-libkrb5-3_1.20.1-2+deb12u5_arm64.deb ...
+#15 83.54 Unpacking libkrb5-3:arm64 (1.20.1-2+deb12u5) ...
+#15 83.56 Selecting previously unselected package libgssapi-krb5-2:arm64.
+#15 83.56 Preparing to unpack .../05-libgssapi-krb5-2_1.20.1-2+deb12u5_arm64.deb ...
+#15 83.56 Unpacking libgssapi-krb5-2:arm64 (1.20.1-2+deb12u5) ...
+#15 83.57 Selecting previously unselected package libsasl2-modules-db:arm64.
+#15 83.57 Preparing to unpack .../06-libsasl2-modules-db_2.1.28+dfsg-10_arm64.deb ...
+#15 83.58 Unpacking libsasl2-modules-db:arm64 (2.1.28+dfsg-10) ...
+#15 83.58 Selecting previously unselected package libsasl2-2:arm64.
+#15 83.58 Preparing to unpack .../07-libsasl2-2_2.1.28+dfsg-10_arm64.deb ...
+#15 83.58 Unpacking libsasl2-2:arm64 (2.1.28+dfsg-10) ...
+#15 83.59 Selecting previously unselected package libldap-2.5-0:arm64.
+#15 83.59 Preparing to unpack .../08-libldap-2.5-0_2.5.13+dfsg-5_arm64.deb ...
+#15 83.59 Unpacking libldap-2.5-0:arm64 (2.5.13+dfsg-5) ...
+#15 83.61 Selecting previously unselected package libnghttp2-14:arm64.
+#15 83.61 Preparing to unpack .../09-libnghttp2-14_1.52.0-1+deb12u3_arm64.deb ...
+#15 83.61 Unpacking libnghttp2-14:arm64 (1.52.0-1+deb12u3) ...
+#15 83.62 Selecting previously unselected package libpsl5:arm64.
+#15 83.62 Preparing to unpack .../10-libpsl5_0.21.2-1_arm64.deb ...
+#15 83.62 Unpacking libpsl5:arm64 (0.21.2-1) ...
+#15 83.63 Selecting previously unselected package librtmp1:arm64.
+#15 83.63 Preparing to unpack .../11-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_arm64.deb ...
+#15 83.63 Unpacking librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#15 83.64 Selecting previously unselected package libssh2-1:arm64.
+#15 83.64 Preparing to unpack .../12-libssh2-1_1.10.0-3+b1_arm64.deb ...
+#15 83.64 Unpacking libssh2-1:arm64 (1.10.0-3+b1) ...
+#15 83.65 Selecting previously unselected package libcurl4:arm64.
+#15 83.65 Preparing to unpack .../13-libcurl4_7.88.1-10+deb12u15_arm64.deb ...
+#15 83.65 Unpacking libcurl4:arm64 (7.88.1-10+deb12u15) ...
+#15 83.67 Selecting previously unselected package curl.
+#15 83.67 Preparing to unpack .../14-curl_7.88.1-10+deb12u15_arm64.deb ...
+#15 83.68 Unpacking curl (7.88.1-10+deb12u15) ...
+#15 83.69 Setting up libkeyutils1:arm64 (1.6.3-2) ...
+#15 83.70 Setting up libpsl5:arm64 (0.21.2-1) ...
+#15 83.70 Setting up libbrotli1:arm64 (1.0.9-2+b6) ...
+#15 83.70 Setting up libnghttp2-14:arm64 (1.52.0-1+deb12u3) ...
+#15 83.70 Setting up libkrb5support0:arm64 (1.20.1-2+deb12u5) ...
+#15 83.71 Setting up libsasl2-modules-db:arm64 (2.1.28+dfsg-10) ...
+#15 83.71 Setting up librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#15 83.71 Setting up libk5crypto3:arm64 (1.20.1-2+deb12u5) ...
+#15 83.71 Setting up libsasl2-2:arm64 (2.1.28+dfsg-10) ...
+#15 83.71 Setting up libssh2-1:arm64 (1.10.0-3+b1) ...
+#15 83.72 Setting up libkrb5-3:arm64 (1.20.1-2+deb12u5) ...
+#15 83.72 Setting up libldap-2.5-0:arm64 (2.5.13+dfsg-5) ...
+#15 83.72 Setting up libgssapi-krb5-2:arm64 (1.20.1-2+deb12u5) ...
+#15 83.72 Setting up libcurl4:arm64 (7.88.1-10+deb12u15) ...
+#15 83.72 Setting up curl (7.88.1-10+deb12u15) ...
+#15 83.73 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#15 DONE 83.8s
+
+#17 [identity build 4/5] RUN dotnet restore "src/Services/Identity/SeeSight.Identity.Api/SeeSight.Identity.Api.csproj"
+#17 81.48   Restored /src/src/Shared/SeeSight.Shared.Observability/SeeSight.Shared.Observability.csproj (in 1.34 min).
+#17 81.48   Restored /src/src/Services/Identity/SeeSight.Identity.Api/SeeSight.Identity.Api.csproj (in 1.34 min).
+#17 ...
+
+#18 [tenant runtime 3/4] WORKDIR /app
+#18 DONE 0.0s
+
+#14 [tenant build 4/5] RUN dotnet restore "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj"
+#14 73.61   Restored /src/src/Services/Tenant/SeeSight.Tenant.Application/SeeSight.Tenant.Application.csproj (in 1.21 min).
+#14 88.58   Restored /src/src/Shared/SeeSight.Shared.Observability/SeeSight.Shared.Observability.csproj (in 1.45 min).
+#14 ...
+
+#16 [gateway build 4/5] RUN dotnet restore "src/Gateway/SeeSight.Gateway/SeeSight.Gateway.csproj"
+#16 91.72   Restored /src/src/Shared/SeeSight.Shared.Observability/SeeSight.Shared.Observability.csproj (in 1.51 min).
+#16 ...
+
+#14 [tenant build 4/5] RUN dotnet restore "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj"
+#14 93.56   Restored /src/src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj (in 1.54 min).
+#14 ...
+
+#16 [gateway build 4/5] RUN dotnet restore "src/Gateway/SeeSight.Gateway/SeeSight.Gateway.csproj"
+#16 107.0   Restored /src/src/Gateway/SeeSight.Gateway/SeeSight.Gateway.csproj (in 1.76 min).
+#16 DONE 107.1s
+
+#14 [tenant build 4/5] RUN dotnet restore "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj"
+#14 ...
+
+#19 [gateway build 5/5] RUN dotnet publish "src/Gateway/SeeSight.Gateway/SeeSight.Gateway.csproj" -c Release -o /app/publish --no-restore
+#19 ...
+
+#17 [identity build 4/5] RUN dotnet restore "src/Services/Identity/SeeSight.Identity.Api/SeeSight.Identity.Api.csproj"
+#17 107.8   Restored /src/src/Services/Identity/SeeSight.Identity.Infrastructure/SeeSight.Identity.Infrastructure.csproj (in 1.77 min).
+#17 DONE 107.9s
+
+#14 [tenant build 4/5] RUN dotnet restore "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj"
+#14 107.9   Restored /src/src/Services/Tenant/SeeSight.Tenant.Infrastructure/SeeSight.Tenant.Infrastructure.csproj (in 1.78 min).
+#14 DONE 107.9s
+
+#20 [tenant build 5/5] RUN dotnet publish "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj" -c Release -o /app/publish --no-restore
+#20 2.571   SeeSight.Shared.Common -> /src/src/Shared/SeeSight.Shared.Common/bin/Release/net9.0/SeeSight.Shared.Common.dll
+#20 2.594   SeeSight.SharedKernel -> /src/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+#20 3.224   SeeSight.Shared.Observability -> /src/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+#20 3.230   SeeSight.Tenant.Domain -> /src/src/Services/Tenant/SeeSight.Tenant.Domain/bin/Release/net9.0/SeeSight.Tenant.Domain.dll
+#20 ...
+
+#19 [gateway build 5/5] RUN dotnet publish "src/Gateway/SeeSight.Gateway/SeeSight.Gateway.csproj" -c Release -o /app/publish --no-restore
+#19 2.746   SeeSight.SharedKernel -> /src/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+#19 3.033   SeeSight.Shared.Observability -> /src/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+#19 4.179   SeeSight.Gateway -> /src/src/Gateway/SeeSight.Gateway/bin/Release/net9.0/SeeSight.Gateway.dll
+#19 4.292   SeeSight.Gateway -> /app/publish/
+#19 DONE 4.5s
+
+#21 [gateway runtime 2/4] RUN apt-get update     && apt-get install -y --no-install-recommends curl     && rm -rf /var/lib/apt/lists/*
+#21 CACHED
+
+#22 [gateway runtime 3/4] WORKDIR /app
+#22 CACHED
+
+#23 [gateway runtime 4/4] COPY --from=build /app/publish .
+#23 DONE 0.0s
+
+#24 [gateway] exporting to image
+#24 exporting layers
+#24 exporting layers 0.3s done
+#24 exporting manifest sha256:970069c59e59edde80b04aaabac82924da8d566a59652087d45e873fbb771091 0.0s done
+#24 exporting config sha256:e544bf826f8b4c5594ba63c7daa39ff90d4a38a0d09f27f7b22273cbbfd2a637 0.0s done
+#24 exporting attestation manifest sha256:7e15bc9e1e2b3690caa9908662784b3b1a7152ab4b9a0a6657454f23cd06f1fa 0.0s done
+#24 exporting manifest list sha256:e4fc7f8201919bdb798959a5434666cb595223cd99695e1879f4b27b62972f4e done
+#24 naming to docker.io/library/seesight-gateway:latest
+#24 naming to docker.io/library/seesight-gateway:latest done
+#24 unpacking to docker.io/library/seesight-gateway:latest 0.1s done
+#24 DONE 0.5s
+
+#20 [tenant build 5/5] RUN dotnet publish "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj" -c Release -o /app/publish --no-restore
+#20 3.908   SeeSight.Tenant.Application -> /src/src/Services/Tenant/SeeSight.Tenant.Application/bin/Release/net9.0/SeeSight.Tenant.Application.dll
+#20 4.288   SeeSight.Tenant.Infrastructure -> /src/src/Services/Tenant/SeeSight.Tenant.Infrastructure/bin/Release/net9.0/SeeSight.Tenant.Infrastructure.dll
+#20 ...
+
+#25 [gateway] resolving provenance for metadata file
+#25 DONE 0.0s
+
+#26 [identity build 5/5] RUN dotnet publish "src/Services/Identity/SeeSight.Identity.Api/SeeSight.Identity.Api.csproj" -c Release -o /app/publish --no-restore
+#26 2.532   SeeSight.Shared.Common -> /src/src/Shared/SeeSight.Shared.Common/bin/Release/net9.0/SeeSight.Shared.Common.dll
+#26 2.539   SeeSight.SharedKernel -> /src/src/Shared/SeeSight.SharedKernel/bin/Release/net9.0/SeeSight.SharedKernel.dll
+#26 3.078   SeeSight.Shared.Observability -> /src/src/Shared/SeeSight.Shared.Observability/bin/Release/net9.0/SeeSight.Shared.Observability.dll
+#26 3.144   SeeSight.Identity.Domain -> /src/src/Services/Identity/SeeSight.Identity.Domain/bin/Release/net9.0/SeeSight.Identity.Domain.dll
+#26 3.772   SeeSight.Identity.Application -> /src/src/Services/Identity/SeeSight.Identity.Application/bin/Release/net9.0/SeeSight.Identity.Application.dll
+#26 4.239   SeeSight.Identity.Infrastructure -> /src/src/Services/Identity/SeeSight.Identity.Infrastructure/bin/Release/net9.0/SeeSight.Identity.Infrastructure.dll
+#26 4.841   SeeSight.Identity.Api -> /src/src/Services/Identity/SeeSight.Identity.Api/bin/Release/net9.0/SeeSight.Identity.Api.dll
+#26 4.883   SeeSight.Identity.Api -> /app/publish/
+#26 DONE 5.0s
+
+#27 [identity runtime 2/4] RUN apt-get update     && apt-get install -y --no-install-recommends curl     && rm -rf /var/lib/apt/lists/*
+#27 CACHED
+
+#28 [identity runtime 3/4] WORKDIR /app
+#28 CACHED
+
+#20 [tenant build 5/5] RUN dotnet publish "src/Services/Tenant/SeeSight.Tenant.Api/SeeSight.Tenant.Api.csproj" -c Release -o /app/publish --no-restore
+#20 4.869   SeeSight.Tenant.Api -> /src/src/Services/Tenant/SeeSight.Tenant.Api/bin/Release/net9.0/SeeSight.Tenant.Api.dll
+#20 4.924   SeeSight.Tenant.Api -> /app/publish/
+#20 DONE 5.0s
+
+#29 [identity runtime 4/4] COPY --from=build /app/publish .
+#29 DONE 0.0s
+
+#30 [tenant runtime 4/4] COPY --from=build /app/publish .
+#30 DONE 0.0s
+
+#31 [tenant] exporting to image
+#31 ...
+
+#32 [identity] exporting to image
+#32 exporting layers 0.3s done
+#32 exporting manifest sha256:f0bfb48ef318593903f8ce75dfeb762c0dcc29819612d4ca9efcbea04a1ab9aa done
+#32 exporting config sha256:0229666393ea6a0cbed2be48540b21467db630a4f1c24570648910cd17bce39a done
+#32 exporting attestation manifest sha256:6263ebcfd9156868439e8cc47537beff62d2c33be1bcce31f12930e42b7c67a5 done
+#32 exporting manifest list sha256:900c99e9745aa248859b419341b3a56575e1266fa3fbbcbd67f57b324af31fa0 done
+#32 naming to docker.io/library/seesight-identity:latest done
+#32 unpacking to docker.io/library/seesight-identity:latest 0.0s done
+#32 DONE 0.4s
+
+#31 [tenant] exporting to image
+#31 exporting layers 0.3s done
+#31 exporting manifest sha256:a43622a19660be3c9e0cfa82196f8e5b76afa46f52449681c72d0755062a7f4f done
+#31 exporting config sha256:d96a9ac0149f984335ba8ea13007f57af8226a07f3cd79627252049c48fa03e2 done
+#31 exporting attestation manifest sha256:6e2c1ea7b6afad14885efeca6cec005a0b5490c1850bd6a7381dd5d15e36b1cd done
+#31 exporting manifest list sha256:ca9eed3f5475192e27f1520a5a60cadfde07084d865a3081d1ac90a13f7e47bf done
+#31 naming to docker.io/library/seesight-tenant:latest done
+#31 unpacking to docker.io/library/seesight-tenant:latest 0.1s done
+#31 DONE 0.4s
+
+#33 [identity] resolving provenance for metadata file
+#33 DONE 0.0s
+
+#34 [tenant] resolving provenance for metadata file
+#34 DONE 0.0s
+ Image seesight-identity Built 
+ Image seesight-tenant Built 
+ Image seesight-gateway Built 
+ Network seesight-network Creating 
+ Network seesight-network Created 
+ Volume seesight_seesight_grafana_data Creating 
+ Volume seesight_seesight_grafana_data Created 
+ Volume seesight_seesight_prometheus_data Creating 
+ Volume seesight_seesight_prometheus_data Created 
+ Volume seesight_seesight_pg_data Creating 
+ Volume seesight_seesight_pg_data Created 
+ Container seesight-postgres-1 Creating 
+ Container seesight-rabbitmq-1 Creating 
+ Container seesight-jaeger-1 Creating 
+ Container seesight-redis-1 Creating 
+ Container seesight-jaeger-1 Created 
+ Container seesight-otel-collector-1 Creating 
+ Container seesight-redis-1 Created 
+ Container seesight-postgres-1 Created 
+ Container seesight-identity-1 Creating 
+ Container seesight-tenant-1 Creating 
+ Container seesight-rabbitmq-1 Created 
+ Container seesight-otel-collector-1 Created 
+ Container seesight-prometheus-1 Creating 
+ Container seesight-tenant-1 Created 
+ Container seesight-identity-1 Created 
+ Container seesight-gateway-1 Creating 
+ Container seesight-prometheus-1 Created 
+ Container seesight-grafana-1 Creating 
+ Container seesight-gateway-1 Created 
+ Container seesight-grafana-1 Created 
+ Container seesight-jaeger-1 Starting 
+ Container seesight-postgres-1 Starting 
+ Container seesight-redis-1 Starting 
+ Container seesight-rabbitmq-1 Starting 
+ Container seesight-jaeger-1 Started 
+ Container seesight-jaeger-1 Waiting 
+ Container seesight-redis-1 Started 
+ Container seesight-rabbitmq-1 Started 
+ Container seesight-postgres-1 Started 
+ Container seesight-postgres-1 Waiting 
+ Container seesight-postgres-1 Waiting 
+ Container seesight-jaeger-1 Healthy 
+ Container seesight-otel-collector-1 Starting 
+ Container seesight-postgres-1 Healthy 
+ Container seesight-postgres-1 Healthy 
+ Container seesight-identity-1 Starting 
+ Container seesight-tenant-1 Starting 
+ Container seesight-otel-collector-1 Started 
+ Container seesight-prometheus-1 Starting 
+ Container seesight-tenant-1 Started 
+ Container seesight-identity-1 Started 
+ Container seesight-redis-1 Waiting 
+ Container seesight-identity-1 Waiting 
+ Container seesight-tenant-1 Waiting 
+ Container seesight-prometheus-1 Started 
+ Container seesight-prometheus-1 Waiting 
+ Container seesight-jaeger-1 Waiting 
+ Container seesight-redis-1 Healthy 
+ Container seesight-jaeger-1 Healthy 
+ Container seesight-identity-1 Healthy 
+ Container seesight-tenant-1 Healthy 
+ Container seesight-gateway-1 Starting 
+ Container seesight-prometheus-1 Healthy 
+ Container seesight-grafana-1 Starting 
+ Container seesight-gateway-1 Started 
+ Container seesight-grafana-1 Started 
+NAME                        IMAGE                                          COMMAND                  SERVICE          CREATED          STATUS                    PORTS
+seesight-gateway-1          seesight-gateway                               "sh -c 'exec dotnet …"   gateway          16 seconds ago   Up 5 seconds (healthy)    0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+seesight-grafana-1          grafana/grafana:11.3.0                         "/run.sh"                grafana          16 seconds ago   Up 5 seconds (healthy)    0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp
+seesight-identity-1         seesight-identity                              "sh -c 'exec dotnet …"   identity         17 seconds ago   Up 10 seconds (healthy)   0.0.0.0:5075->8080/tcp, [::]:5075->8080/tcp
+seesight-jaeger-1           jaegertracing/all-in-one:1.62.0                "/go/bin/all-in-one-…"   jaeger           17 seconds ago   Up 16 seconds (healthy)   0.0.0.0:16686->16686/tcp, [::]:16686->16686/tcp
+seesight-otel-collector-1   otel/opentelemetry-collector-contrib:0.112.0   "/otelcol-contrib --…"   otel-collector   17 seconds ago   Up 11 seconds             0.0.0.0:4317-4318->4317-4318/tcp, [::]:4317-4318->4317-4318/tcp, 0.0.0.0:13133->13133/tcp, [::]:13133->13133/tcp
+seesight-postgres-1         postgres:16-alpine                             "docker-entrypoint.s…"   postgres         17 seconds ago   Up 16 seconds (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+seesight-prometheus-1       prom/prometheus:v2.55.1                        "/bin/prometheus --c…"   prometheus       17 seconds ago   Up 10 seconds (healthy)   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+seesight-rabbitmq-1         rabbitmq:3-management-alpine                   "docker-entrypoint.s…"   rabbitmq         17 seconds ago   Up 16 seconds (healthy)   0.0.0.0:5672->5672/tcp, [::]:5672->5672/tcp, 0.0.0.0:15672->15672/tcp, [::]:15672->15672/tcp
+seesight-redis-1            redis:7-alpine                                 "docker-entrypoint.s…"   redis            17 seconds ago   Up 16 seconds (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+seesight-tenant-1           seesight-tenant                                "sh -c 'exec dotnet …"   tenant           17 seconds ago   Up 10 seconds (healthy)   0.0.0.0:5076->8080/tcp, [::]:5076->8080/tcp
+Build started...
+Build succeeded.
+Failed executing DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+Applying migration '20260809001252_InitialCreate'.
+Applying migration '20260809014419_AddCompanyForeignKeys'.
+Done.
+{"status":"Healthy","services":{"identity":"Healthy","tenant":"Healthy"}}=== M3 Live E2E Verification via Gateway (http://localhost:8080) ===
+
+--- 1. Register a CompanyAdmin (self-signup flow) for Company A ---
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "errors": {
+    "request": [
+      "The request field is required."
+    ],
+    "$.role": [
+      "The JSON property 'role' could not be mapped to any .NET member contained in type 'SeeSight.Identity.Api.Contracts.RegisterRequest'."
+    ]
+  },
+  "traceId": "00-364014ffe88d44d87ff0e68633d58b5f-aa25c6cde43c2156-01"
+}
+--- 1. Register Company A's admin (self-signup: always CompanyAdmin, no company yet) ---
+{
+  "title": "Internal Server Error",
+  "status": 500,
+  "detail": "An unexpected error occurred."
+}
+Build started...
+Build succeeded.
+Failed executing DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+Applying migration '20260805004304_InitialCreate'.
+Applying migration '20260808191438_AddRefreshAndPasswordResetTokens'.
+Done.
+--- 1 (retry). Register Company A's admin ---
+{
+  "accessTokenExpiresAt": "2026-08-09T02:09:32.2652111+00:00",
+  "refreshToken": "<REDACTED_REFRESH_TOKEN>",
+  "refreshTokenExpiresAt": "2026-09-08T01:54:31.9341472+00:00",
+  "user": {
+    "id": "019fe43a-94b1-713b-a25c-5fa65c797fd5",
+    "email": "admin-a@example.com",
+    "firstName": "Admin",
+    "lastName": "A",
+    "role": 1,
+    "status": 0,
+    "mustChangePassword": false,
+    "companyId": null
+  }
+}
+
+=== 2. Register Company B's admin ===
+{
+  "accessTokenExpiresAt": "2026-08-09T02:10:50.9545624+00:00",
+  "refreshTokenExpiresAt": "2026-09-08T01:55:50.7396885+00:00",
+  "user": {
+    "id": "019fe43b-c82a-7e0e-b769-99cc60318f3f",
+    "email": "admin-b@example.com",
+    "firstName": "Admin",
+    "lastName": "B",
+    "role": 1,
+    "status": 0,
+    "mustChangePassword": false,
+    "companyId": null
+  }
+}
+
+=== 3. Login as Company A admin, Company B admin (get bearer tokens) ===
+Token A acquired: yes
+Token B acquired: yes
+
+=== 4. Bootstrap a SuperAdmin (register as CompanyAdmin, promote via direct SQL update — no self-signup path for SuperAdmin exists by design) ===
+UPDATE 1
+Token S (SuperAdmin) acquired: yes
+
+=== 5. Company A admin self-creates Company A (self-signup, becomes its own admin) ===
+{
+  "id": "019fe43b-cc50-7457-89d4-575e6be75d63",
+  "name": "Acme Corp",
+  "legalName": null,
+  "slug": "acme-corp-eba44478",
+  "country": "US",
+  "billingEmail": null,
+  "timezone": "UTC",
+  "status": 0,
+  "policyJson": null,
+  "createdAt": "2026-08-09T01:55:52.0164324+00:00",
+  "updatedAt": "2026-08-09T01:55:52.0164324+00:00"
+}
+
+=== 6. Company A admin re-logs-in to pick up the newly assigned companyId in the JWT ===
+Refreshed token A companyId claim present: yes
+
+=== 7. Company B admin self-creates Company B ===
+{
+  "id": "019fe43b-cde4-71a0-bac0-748e54fc7e7a",
+  "name": "Globex Inc",
+  "legalName": null,
+  "slug": "globex-inc-43fb1472",
+  "country": "US",
+  "billingEmail": null,
+  "timezone": "UTC",
+  "status": 0,
+  "policyJson": null,
+  "createdAt": "2026-08-09T01:55:52.4202864+00:00",
+  "updatedAt": "2026-08-09T01:55:52.4202864+00:00"
+}
+
+=== 8. Company A admin creates a Department and an Employee (with createLogin=true) ===
+{
+  "id": "019fe43b-cf2c-7d6d-a3e8-21ffa4f7872e",
+  "companyId": "019fe43b-cc50-7457-89d4-575e6be75d63",
+  "name": "Engineering",
+  "code": "ENG",
+  "createdAt": "2026-08-09T01:55:52.7485225+00:00",
+  "updatedAt": "2026-08-09T01:55:52.7485225+00:00"
+}
+{
+  "employee": {
+    "id": "019fe43b-d039-747d-8efa-7d2f295223f1",
+    "companyId": "019fe43b-cc50-7457-89d4-575e6be75d63",
+    "departmentId": "019fe43b-cf2c-7d6d-a3e8-21ffa4f7872e",
+    "userId": "019fe43b-d035-7493-ac2c-6405a568e79c",
+    "email": "employee1@example.com",
+    "firstName": "Emp",
+    "lastName": "One",
+    "jobTitle": null,
+    "phone": null,
+    "nationality": null,
+    "passportNumber": null,
+    "preferredAirport": null,
+    "status": 0,
+    "createdAt": "2026-08-09T01:55:52.792426+00:00",
+    "updatedAt": "2026-08-09T01:55:52.792426+00:00"
+  },
+  "tempPassword": "<REDACTED_TEMP_PASSWORD>"
+}
+
+=== 9. TENANT ISOLATION PROOF (live, through Gateway + real JWTs): Company B admin cannot read Company A's company record ===
+GET /companies/019fe43b-cc50-7457-89d4-575e6be75d63 as Company B admin -> HTTP 404 (expect 404)
+{
+  "title": "Not Found",
+  "status": 404,
+  "detail": "Company not found."
+}
+
+=== 10. TENANT ISOLATION PROOF: Company B admin cannot list Company A's employees, even passing companyId explicitly ===
+GET /employees?companyId=019fe43b-cc50-7457-89d4-575e6be75d63 as Company B admin -> HTTP 403 (expect 403)
+{
+  "title": "Forbidden",
+  "status": 403,
+  "detail": "You cannot access another company's data."
+}
+
+=== 11. TENANT ISOLATION PROOF: Company B admin cannot read Company A's employee by id ===
+GET /employees/019fe43b-d039-747d-8efa-7d2f295223f1 as Company B admin -> HTTP 404 (expect 404)
+
+=== 12. TENANT ISOLATION PROOF: Company B admin cannot update Company A's department ===
+PATCH /departments/019fe43b-cf2c-7d6d-a3e8-21ffa4f7872e as Company B admin -> HTTP 404 (expect 404)
+
+=== 13. SUPER ADMIN PROOF: SuperAdmin CAN read Company A's company record and list its employees ===
+GET /companies/019fe43b-cc50-7457-89d4-575e6be75d63 as SuperAdmin -> HTTP 200 (expect 200)
+GET /employees?companyId=019fe43b-cc50-7457-89d4-575e6be75d63 as SuperAdmin -> HTTP 200 (expect 200)
+1
+
+=== 14. SUPER ADMIN PROOF: SuperAdmin listing employees WITHOUT companyId is rejected (no implicit default tenant) ===
+GET /employees (no companyId) as SuperAdmin -> HTTP 400 (expect 400)
+
+=== 15. GATEWAY NEVER EXPOSES INTERNAL ROUTES: /internal/employees/validate through the Gateway must not resolve ===
+POST /internal/employees/validate through Gateway -> HTTP 404 (expect 404, no matching route)
+
+=== 16. INTERNAL ENDPOINT DIRECT-TO-SERVICE: correct internal token succeeds ===
+POST /internal/employees/validate direct with correct token -> HTTP 200 (expect 200)
+{
+  "validEmployeeIds": [
+    "019fe43b-d039-747d-8efa-7d2f295223f1"
+  ],
+  "invalidEmployeeIds": []
+}
+
+=== 17. INTERNAL ENDPOINT DIRECT-TO-SERVICE: missing/wrong internal token is rejected ===
+POST /internal/employees/validate direct with NO token -> HTTP 401 (expect 401)
+
+=== 18. createLogin=true genuinely provisioned an Identity user for the employee — verify via GetMine as that employee ===
+Provisioned Identity userId: 019fe43b-d035-7493-ac2c-6405a568e79c, tempPassword present: yes
+{
+  "accessTokenExpiresAt": "2026-08-09T02:10:53.4858083+00:00",
+  "refreshTokenExpiresAt": "2026-09-08T01:55:53.4858054+00:00",
+  "user": {
+    "id": "019fe43b-d035-7493-ac2c-6405a568e79c",
+    "email": "employee1@example.com",
+    "firstName": "Emp",
+    "lastName": "One",
+    "role": 2,
+    "status": 0,
+    "mustChangePassword": true,
+    "companyId": "019fe43b-cc50-7457-89d4-575e6be75d63"
+  }
+}
+GET /employees/me as the provisioned employee -> HTTP 403 (expect 200)
+{
+  "status": 403,
+  "title": "Forbidden",
+  "detail": "You must change your password before continuing."
+}
+
+=== 19. Deactivating the Employee syncs the linked Identity user (must-change-password / active flag) — deactivate then confirm login is blocked or flagged ===
+204
+
+=== E2E VERIFICATION COMPLETE ===
+=== 20. Verify deactivation synced to Identity: the deactivated employee's login is now rejected ===
+Login as deactivated employee -> HTTP 401 (expect 401)
+{
+  "title": "Unauthorized",
+  "status": 401,
+  "detail": "Invalid email or password."
+}

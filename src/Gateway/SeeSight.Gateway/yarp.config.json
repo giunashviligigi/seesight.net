@@ -38,6 +38,111 @@
       "identity-jwks": {
         "ClusterId": "identity",
         "Match": { "Path": "/.well-known/jwks.json", "Methods": [ "GET" ] }
+      },
+      "tenant-companies-create": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-list": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-me": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies/me", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-get": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies/{id}", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-update": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies/{id}", "Methods": [ "PATCH" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-deactivate": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies/{id}/deactivate", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-activate": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies/{id}/activate", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-delete": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies/{id}", "Methods": [ "DELETE" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-companies-assign-admin": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/companies/{id}/assign-admin", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-departments-create": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/departments", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-departments-list": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/departments", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-departments-update": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/departments/{id}", "Methods": [ "PATCH" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-departments-delete": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/departments/{id}", "Methods": [ "DELETE" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-create": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-list": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-me": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees/me", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-get": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees/{id}", "Methods": [ "GET" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-update": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees/{id}", "Methods": [ "PATCH" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-deactivate": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees/{id}/deactivate", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-activate": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees/{id}/activate", "Methods": [ "POST" ] },
+        "AuthorizationPolicy": "Authenticated"
+      },
+      "tenant-employees-delete": {
+        "ClusterId": "tenant",
+        "Match": { "Path": "/employees/{id}", "Methods": [ "DELETE" ] },
+        "AuthorizationPolicy": "Authenticated"
       }
     },
     "Clusters": {
@@ -46,6 +151,14 @@
           "destination1": {
             "_comment": "Placeholder — Program.cs overrides this address from IdentityService:BaseUrl at startup, the one canonical 'where is Identity Service' setting shared with the JWKS/health HttpClient.",
             "Address": "http://localhost:5075/"
+          }
+        }
+      },
+      "tenant": {
+        "Destinations": {
+          "destination1": {
+            "_comment": "Placeholder — Program.cs overrides this address from TenantService:BaseUrl at startup, same pattern as the identity cluster.",
+            "Address": "http://localhost:5076/"
           }
         }
       }

@@ -1,7 +1,7 @@
 # Full local stack: infra (Postgres/RabbitMQ/Redis/observability, reused from
 # docker-compose.infra.yml via `include`) plus every SeeSight service that
-# exists so far (Gateway + Identity, as of M1 — more services are added here
-# as later milestones build them).
+# exists so far (Gateway + Identity + Tenant, as of M3 — more services are
+# added here as later milestones build them).
 #
 # Usage: docker compose -f docker/docker-compose.yml up -d --build
 
@@ -21,12 +21,47 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__IdentityDb: "Host=postgres;Port=5432;Database=identity;Username=seesight;Password=seesight"
+      # Shared with tenant's Internal__ServiceToken below — both services must
+      # agree on the same secret to authenticate the Tenant->Identity internal
+      # calls (docs/adr/0006-internal-service-to-service-authentication.md).
+      # Dev-only literal; production supplies a real per-environment secret.
+      Internal__ServiceToken: "dev-local-internal-service-token"
       Observability__OtlpEndpoint: "http://otel-collector:4317"
     ports:
       - "5075:8080"
     depends_on:
       postgres:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health/ready"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    networks:
+      - seesight-network
+
+  tenant:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        PROJECT_PATH: src/Services/Tenant/SeeSight.Tenant.Api
+        PROJECT_NAME: SeeSight.Tenant.Api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__TenantDb: "Host=postgres;Port=5432;Database=tenant;Username=seesight;Password=seesight"
+      IdentityService__BaseUrl: "http://identity:8080"
+      Internal__ServiceToken: "dev-local-internal-service-token"
+      Observability__OtlpEndpoint: "http://otel-collector:4317"
+    ports:
+      - "5076:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      # Identity Service is a *soft* dependency at request time (only
+      # createLogin:true calls need it — docs/ServiceDependencyMatrix.md), not
+      # a startup-gating one, so it's deliberately not required here.
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health/ready"]
       interval: 5s
@@ -46,12 +81,15 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       IdentityService__BaseUrl: "http://identity:8080"
+      TenantService__BaseUrl: "http://tenant:8080"
       Gateway__RateLimit__RedisConnectionString: "redis:6379"
       Observability__OtlpEndpoint: "http://otel-collector:4317"
     ports:
       - "8080:8080"
     depends_on:
       identity:
+        condition: service_healthy
+      tenant:
         condition: service_healthy
       redis:
         condition: service_healthy

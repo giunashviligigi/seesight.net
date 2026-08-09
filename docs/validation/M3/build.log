@@ -1,0 +1,29 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  SeeSight.Shared.Common -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Common/bin/Debug/net9.0/SeeSight.Shared.Common.dll
+  SeeSight.SharedKernel -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.SharedKernel/bin/Debug/net9.0/SeeSight.SharedKernel.dll
+  SeeSight.Shared.Contracts -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Contracts/bin/Debug/net9.0/SeeSight.Shared.Contracts.dll
+  SeeSight.Tenant.Domain -> /Users/gigi/Desktop/Seesight .net/src/Services/Tenant/SeeSight.Tenant.Domain/bin/Debug/net9.0/SeeSight.Tenant.Domain.dll
+  SeeSight.Shared.Observability -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Observability/bin/Debug/net9.0/SeeSight.Shared.Observability.dll
+  SeeSight.Identity.Domain -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Domain/bin/Debug/net9.0/SeeSight.Identity.Domain.dll
+  SeeSight.Tenant.Application -> /Users/gigi/Desktop/Seesight .net/src/Services/Tenant/SeeSight.Tenant.Application/bin/Debug/net9.0/SeeSight.Tenant.Application.dll
+  SeeSight.Shared.Messaging -> /Users/gigi/Desktop/Seesight .net/src/Shared/SeeSight.Shared.Messaging/bin/Debug/net9.0/SeeSight.Shared.Messaging.dll
+  SeeSight.Identity.Application -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Application/bin/Debug/net9.0/SeeSight.Identity.Application.dll
+  SeeSight.Tenant.UnitTests -> /Users/gigi/Desktop/Seesight .net/tests/Tenant/SeeSight.Tenant.UnitTests/bin/Debug/net9.0/SeeSight.Tenant.UnitTests.dll
+  SeeSight.Tenant.Infrastructure -> /Users/gigi/Desktop/Seesight .net/src/Services/Tenant/SeeSight.Tenant.Infrastructure/bin/Debug/net9.0/SeeSight.Tenant.Infrastructure.dll
+  SeeSight.Identity.Infrastructure -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Infrastructure/bin/Debug/net9.0/SeeSight.Identity.Infrastructure.dll
+  SeeSight.Gateway -> /Users/gigi/Desktop/Seesight .net/src/Gateway/SeeSight.Gateway/bin/Debug/net9.0/SeeSight.Gateway.dll
+  SeeSight.Identity.UnitTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.UnitTests/bin/Debug/net9.0/SeeSight.Identity.UnitTests.dll
+  SeeSight.Gateway.Tests -> /Users/gigi/Desktop/Seesight .net/tests/Gateway/SeeSight.Gateway.Tests/bin/Debug/net9.0/SeeSight.Gateway.Tests.dll
+  SeeSight.Identity.Api -> /Users/gigi/Desktop/Seesight .net/src/Services/Identity/SeeSight.Identity.Api/bin/Debug/net9.0/SeeSight.Identity.Api.dll
+  SeeSight.Tenant.Api -> /Users/gigi/Desktop/Seesight .net/src/Services/Tenant/SeeSight.Tenant.Api/bin/Debug/net9.0/SeeSight.Tenant.Api.dll
+  SeeSight.Tenant.IntegrationTests -> /Users/gigi/Desktop/Seesight .net/tests/Tenant/SeeSight.Tenant.IntegrationTests/bin/Debug/net9.0/SeeSight.Tenant.IntegrationTests.dll
+  SeeSight.Tenant.ArchitectureTests -> /Users/gigi/Desktop/Seesight .net/tests/Tenant/SeeSight.Tenant.ArchitectureTests/bin/Debug/net9.0/SeeSight.Tenant.ArchitectureTests.dll
+  SeeSight.Identity.ArchitectureTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.ArchitectureTests/bin/Debug/net9.0/SeeSight.Identity.ArchitectureTests.dll
+  SeeSight.Identity.IntegrationTests -> /Users/gigi/Desktop/Seesight .net/tests/Identity/SeeSight.Identity.IntegrationTests/bin/Debug/net9.0/SeeSight.Identity.IntegrationTests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.80

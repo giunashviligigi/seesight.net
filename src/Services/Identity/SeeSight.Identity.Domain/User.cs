@@ -3,8 +3,11 @@ namespace SeeSight.Identity.Domain;
 /// <summary>
 /// Authentication identity. Self-signup (<see cref="Register"/>) always creates a
 /// <see cref="UserRole.CompanyAdmin"/> with no company assigned yet — a company is
-/// created/assigned afterward (Tenant Service, M3). SuperAdmin/Employee accounts are
-/// created through other paths not yet built in M1 — see docs/Authentication.md §4.
+/// created/assigned afterward. Admin-provisioned employee logins
+/// (<see cref="ProvisionForEmployee"/>) are created by Tenant Service's
+/// <c>createLogin: true</c> flow via the internal API — see
+/// docs/TenantArchitecture.md §6. SuperAdmin accounts are created through a path
+/// not yet built (no milestone requires it yet) — see docs/Authentication.md §4.
 /// </summary>
 public sealed class User
 {
@@ -25,17 +28,26 @@ public sealed class User
     {
     }
 
-    private User(Guid id, string email, string passwordHash, string? firstName, string? lastName, DateTimeOffset now)
+    private User(
+        Guid id,
+        string email,
+        string passwordHash,
+        string? firstName,
+        string? lastName,
+        UserRole role,
+        Guid? companyId,
+        bool mustChangePassword,
+        DateTimeOffset now)
     {
         Id = id;
         Email = email;
         PasswordHash = passwordHash;
         FirstName = firstName;
         LastName = lastName;
-        Role = UserRole.CompanyAdmin;
+        Role = role;
         Status = UserStatus.Active;
-        MustChangePassword = false;
-        CompanyId = null;
+        MustChangePassword = mustChangePassword;
+        CompanyId = companyId;
         CreatedAt = now;
         UpdatedAt = now;
     }
@@ -52,7 +64,24 @@ public sealed class User
         ArgumentException.ThrowIfNullOrWhiteSpace(passwordHash);
 
         var normalizedEmail = email.Trim().ToLowerInvariant();
-        return new User(Guid.CreateVersion7(), normalizedEmail, passwordHash, firstName, lastName, now);
+        return new User(Guid.CreateVersion7(), normalizedEmail, passwordHash, firstName, lastName, UserRole.CompanyAdmin, null, false, now);
+    }
+
+    /// <summary>
+    /// Admin-provisioned employee login. Always <see cref="UserRole.Employee"/>,
+    /// always tied to a company, and always <see cref="MustChangePassword"/> —
+    /// the caller (Tenant Service, via the internal API) supplies a one-time
+    /// temporary password whose forced-change-on-first-login is enforced by the
+    /// Gateway's MustChangePassword gate, per docs/TenantArchitecture.md §6.
+    /// <paramref name="passwordHash"/> must already be hashed.
+    /// </summary>
+    public static User ProvisionForEmployee(string email, string passwordHash, string? firstName, string? lastName, Guid companyId, DateTimeOffset now)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(email);
+        ArgumentException.ThrowIfNullOrWhiteSpace(passwordHash);
+
+        var normalizedEmail = email.Trim().ToLowerInvariant();
+        return new User(Guid.CreateVersion7(), normalizedEmail, passwordHash, firstName, lastName, UserRole.Employee, companyId, true, now);
     }
 
     /// <summary>
@@ -77,6 +106,54 @@ public sealed class User
 
         PasswordHash = newPasswordHash;
         MustChangePassword = false;
+        UpdatedAt = now;
+    }
+
+    /// <summary>Idempotent — mirrors the linked Employee's deactivation (docs/TenantArchitecture.md §6/APIContracts.md).</summary>
+    public void Deactivate(DateTimeOffset now)
+    {
+        if (Status == UserStatus.Inactive)
+        {
+            return;
+        }
+
+        Status = UserStatus.Inactive;
+        UpdatedAt = now;
+    }
+
+    /// <summary>Idempotent — mirrors the linked Employee's activation.</summary>
+    public void Activate(DateTimeOffset now)
+    {
+        if (Status == UserStatus.Active)
+        {
+            return;
+        }
+
+        Status = UserStatus.Active;
+        UpdatedAt = now;
+    }
+
+    /// <summary>
+    /// Syncs the display name from the linked Employee record — a <see langword="null"/>
+    /// argument means "leave this field unchanged," not "clear it" (Employee names
+    /// are required fields, so callers never legitimately need to null them out).
+    /// </summary>
+    public void UpdateProfile(string? firstName, string? lastName, DateTimeOffset now)
+    {
+        FirstName = firstName ?? FirstName;
+        LastName = lastName ?? LastName;
+        UpdatedAt = now;
+    }
+
+    /// <summary>
+    /// Assigns or clears the company link — used by Company Service's
+    /// assign-admin/unassign-admin flow. <paramref name="companyId"/> of
+    /// <see langword="null"/> explicitly clears it (unlike <see cref="UpdateProfile"/>,
+    /// there is a real "no company" state to return to).
+    /// </summary>
+    public void AssignToCompany(Guid? companyId, DateTimeOffset now)
+    {
+        CompanyId = companyId;
         UpdatedAt = now;
     }
 }
